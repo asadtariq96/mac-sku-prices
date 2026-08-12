@@ -1,0 +1,707 @@
+{
+ "367136": {
+  "name": "Maclocks Mac Mini Secure Mount Enclosure - lukittava kovamuovinen kuori",
+  "price": "74,99",
+  "price_float": 74.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P7D",
+   "P9D"
+  ]
+ },
+ "967262": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 512 Gt -tietokone (MCX44)",
+  "price": "2 169,00",
+  "price_float": 2169,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967238": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 2 Tt -tietokone (MCX44)",
+  "price": "3 489,00",
+  "price_float": 3489,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967205": {
+  "name": "Apple Mac mini M4 24 Gt, 1 Tt -tietokone (MCYT4)",
+  "price": "1 769,00",
+  "price_float": 1769,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P15D",
+   "P30D"
+  ]
+ },
+ "967280": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 1 Tt -tietokone (MCX44)",
+  "price": "3 159,00",
+  "price_float": 3159,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967226": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 4 Tt -tietokone (MCX44)",
+  "price": "3 929,00",
+  "price_float": 3929,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967190": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 512 Gt -tietokone (MCX44)",
+  "price": "1 949,00",
+  "price_float": 1949,
+  "url": null,
+  "query": "mac mini",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 3,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "967184": {
+  "name": "Apple Mac mini M4 16 Gt, 512 Gt -tietokone (MU9E3)",
+  "price": "1 219,00",
+  "price_float": 1219,
+  "url": null,
+  "query": "mac mini",
+  "availability": "InStock",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P15D",
+   "P30D"
+  ]
+ },
+ "967223": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 2 Tt -tietokone (MCX44)",
+  "price": "2 829,00",
+  "price_float": 2829,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967229": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 8 Tt -tietokone (MCX44)",
+  "price": "6 129,00",
+  "price_float": 6129,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967241": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 4 Tt -tietokone (MCX44)",
+  "price": "4 589,00",
+  "price_float": 4589,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967283": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 2 Tt -tietokone (MCX44)",
+  "price": "3 709,00",
+  "price_float": 3709,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967286": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 4 Tt -tietokone (MCX44)",
+  "price": "4 809,00",
+  "price_float": 4809,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967289": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 8 Tt -tietokone (MCX44)",
+  "price": "7 009,00",
+  "price_float": 7009,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967199": {
+  "name": "Apple Mac mini M4 16 Gt, 2 Tt -tietokone (MU9E3)",
+  "price": "2 099,00",
+  "price_float": 2099,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967208": {
+  "name": "Apple Mac mini M4 24 Gt, 2 Tt -tietokone (MCYT4)",
+  "price": "2 319,00",
+  "price_float": 2319,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967244": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 8 Tt -tietokone (MCX44)",
+  "price": "6 789,00",
+  "price_float": 6789,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967268": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 2 Tt -tietokone (MCX44)",
+  "price": "3 049,00",
+  "price_float": 3049,
+  "url": null,
+  "query": "mac mini",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 2,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "967271": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 4 Tt -tietokone (MCX44)",
+  "price": "4 149,00",
+  "price_float": 4149,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967274": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 8 Tt -tietokone (MCX44)",
+  "price": "6 349,00",
+  "price_float": 6349,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967235": {
+  "name": "Apple Mac mini M4 Pro 48 Gt, 1 Tt -tietokone (MCX44)",
+  "price": "2 939,00",
+  "price_float": 2939,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967265": {
+  "name": "Apple Mac mini M4 Pro 24 Gt, 1 Tt -tietokone (MCX44)",
+  "price": "2 499,00",
+  "price_float": 2499,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P29D",
+   "P1M24D"
+  ]
+ },
+ "967196": {
+  "name": "Apple Mac mini M4 16 Gt, 1 Tt -tietokone (MU9E3)",
+  "price": "1 549,00",
+  "price_float": 1549,
+  "url": null,
+  "query": "mac mini",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P15D",
+   "P30D"
+  ]
+ },
+ "967187": {
+  "name": "Apple Mac mini M4 24 Gt, 512 Gt -tietokone (MCYT4)",
+  "price": "1 439,00",
+  "price_float": 1439,
+  "url": null,
+  "query": "mac mini",
+  "availability": "InStock",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P15D",
+   "P30D"
+  ]
+ },
+ "980756": {
+  "name": "Apple Mac Studio M3 Ultra 96 Gt, 1 Tt -tietokone (MU973)",
+  "price": "6 499,00",
+  "price_float": 6499,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P15D",
+   "P30D"
+  ]
+ },
+ "980753": {
+  "name": "Apple Mac Studio M4 Max 36 Gt, 512 Gt -tietokone (MU963)",
+  "price": "3 099,00",
+  "price_float": 3099,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P15D",
+   "P30D"
+  ]
+ },
+ "1023488": {
+  "name": "mcare Premium Extended huoltopalvelu, Mac Studio / Studio Display 48 kk",
+  "price": "519,99",
+  "price_float": 519.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "OnlineOnly",
+  "availability_og": "in stock",
+  "stock": 25,
+  "stock_status": "above",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "1023485": {
+  "name": "mcare Premium Extended huoltopalvelu, Mac Studio / Studio Display 36 kk",
+  "price": "334,99",
+  "price_float": 334.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "OnlineOnly",
+  "availability_og": "in stock",
+  "stock": 25,
+  "stock_status": "above",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "159159": {
+  "name": "AKG EK 300 kuulokekaapeli, 3 m",
+  "price": "27,99",
+  "price_float": 27.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 25,
+  "stock_status": "above",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "767779": {
+  "name": "HP 808450-002 4-kennoinen akku HP ZBook -kannettaviin",
+  "price": "99,99",
+  "price_float": 99.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P6D",
+   "P8D"
+  ]
+ },
+ "1039819": {
+  "name": "Apple Studio Display XDR näyttö (MFEL4)",
+  "price": "3 599,00",
+  "price_float": 3599,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P10D",
+   "P26D"
+  ]
+ },
+ "1044751": {
+  "name": "Apple Studio Display XDR näyttö, nanopinnoitettu lasi (MFEP4)",
+  "price": "3 899,00",
+  "price_float": 3899,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P10D",
+   "P26D"
+  ]
+ },
+ "1039816": {
+  "name": "Apple Studio Display näyttö (MFEX4)",
+  "price": "1 799,00",
+  "price_float": 1799,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 9,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "912532": {
+  "name": "Austrian Audio MiCreator Studio DIY Plates -etulevyt, musta",
+  "price": "31,99",
+  "price_float": 31.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P15D",
+   "P1M3D"
+  ]
+ },
+ "1044691": {
+  "name": "Apple Studio Display näyttö, nanopinnoitettu lasi (MFF14)",
+  "price": "2 099,00",
+  "price_float": 2099,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "available for order",
+  "stock": 4,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "1044694": {
+  "name": "Apple Studio Display näyttö, säädettävä jalusta (MFEW4)",
+  "price": "2 199,00",
+  "price_float": 2199,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "available for order",
+  "stock": 3,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "159157": {
+  "name": "AKG EK 500 S -kuulokejohto kierrekaapelilla, 5 m",
+  "price": "44,99",
+  "price_float": 44.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P6D",
+   "P9D"
+  ]
+ },
+ "671701": {
+  "name": "Apple Mac Pro ‑pyöräpaketti (MX572)",
+  "price": "859,00",
+  "price_float": 859,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P12D",
+   "P26D"
+  ]
+ },
+ "627007": {
+  "name": "Faber-Castell Goldfaber Studio -öljypastelliliidut, 36 kpl",
+  "price": "14,99",
+  "price_float": 14.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 16,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "856039": {
+  "name": "Microsoft Surface Laptop Studio Extended Hardware Service Plan -laajennettu palvelusopimus, 48 kk",
+  "price": "283,99",
+  "price_float": 283.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "OnlineOnly",
+  "availability_og": "in stock",
+  "stock": 25,
+  "stock_status": "above",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "882343": {
+  "name": "Photo Creator -valokuvapaperin täyttöpakkaus, 10 kpl",
+  "price": "14,99",
+  "price_float": 14.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 5,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "671704": {
+  "name": "Apple Mac Pro ‑ jalkapaketti (MXNM2)",
+  "price": "359,00",
+  "price_float": 359,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P10D",
+   "P26D"
+  ]
+ },
+ "910927": {
+  "name": "Austrian Audio MiCreator Y-Lav -mikrofoni",
+  "price": "49,00",
+  "price_float": 49,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P3D",
+   "P9D"
+  ]
+ },
+ "910876": {
+  "name": "Austrian Audio MiCreator Satellite -mikrofoni",
+  "price": "99,00",
+  "price_float": 99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "LimitedAvailability",
+  "availability_og": "available for order",
+  "stock": 0,
+  "stock_status": "exact",
+  "eta": [
+   "P3D",
+   "P8D"
+  ]
+ },
+ "920041": {
+  "name": "Satechi Stand Hub for Mac mini -telakointiasema, hopea",
+  "price": "105,99",
+  "price_float": 105.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 5,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ },
+ "939058": {
+  "name": "Universal Audio UAFX OX Stomp -pedaali",
+  "price": "388,99",
+  "price_float": 388.99,
+  "url": null,
+  "query": "mac studio",
+  "availability": "SoldOut",
+  "availability_og": "out of stock",
+  "stock": 0,
+  "stock_status": "",
+  "eta": [
+   null,
+   null
+  ]
+ },
+ "968459": {
+  "name": "Beyerdynamic DT 1770 Pro MKII suljetut stereokuulokkeet",
+  "price": "549,00",
+  "price_float": 549,
+  "url": null,
+  "query": "mac studio",
+  "availability": "InStock",
+  "availability_og": "in stock",
+  "stock": 15,
+  "stock_status": "exact",
+  "eta": [
+   "PT0S",
+   "PT0S"
+  ]
+ }
+}

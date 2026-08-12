@@ -1,0 +1,597 @@
+{
+ "generated": "2026-08-12",
+ "note": "Apple RRP per Apple FI configurator (CTO API, Aug 2026). Prices EUR incl. VAT. 'apple' = null where Apple no longer offers the config (CTO/reseller-only, e.g. M4 32GB, M4 Pro 64GB, M3 Ultra 192/256GB). 10GbE = +110 EUR on all Mac mini.",
+ "families": {
+  "Mac mini M4 (2024)": {
+   "chip": "M4 10C CPU/10C GPU",
+   "apple_base": 999.0,
+   "base_config": "16GB/256GB",
+   "skus": [
+    {
+     "id": "mm4-16-256",
+     "name": "Mac mini M4 16GB/256GB",
+     "ram": 16,
+     "ssd": 256,
+     "part": "MU9D3",
+     "hintafi": 5327325,
+     "apple": 999.0
+    },
+    {
+     "id": "mm4-16-512",
+     "name": "Mac mini M4 16GB/512GB",
+     "ram": 16,
+     "ssd": 512,
+     "part": "MU9E3",
+     "hintafi": null,
+     "apple": 1219.0
+    },
+    {
+     "id": "mm4-16-1tb",
+     "name": "Mac mini M4 16GB/1TB",
+     "ram": 16,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": 4973608,
+     "apple": 1549.0
+    },
+    {
+     "id": "mm4-16-2tb",
+     "name": "Mac mini M4 16GB/2TB",
+     "ram": 16,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": 4973609,
+     "apple": 2099.0
+    },
+    {
+     "id": "mm4-24-256",
+     "name": "Mac mini M4 24GB/256GB",
+     "ram": 24,
+     "ssd": 256,
+     "part": null,
+     "hintafi": null,
+     "apple": 1219.0
+    },
+    {
+     "id": "mm4-24-512",
+     "name": "Mac mini M4 24GB/512GB",
+     "ram": 24,
+     "ssd": 512,
+     "part": "MCYT4",
+     "hintafi": null,
+     "apple": 1439.0
+    },
+    {
+     "id": "mm4-24-1tb",
+     "name": "Mac mini M4 24GB/1TB",
+     "ram": 24,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": 4973613,
+     "apple": 1769.0
+    },
+    {
+     "id": "mm4-24-2tb",
+     "name": "Mac mini M4 24GB/2TB",
+     "ram": 24,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": 4973622,
+     "apple": 2319.0
+    },
+    {
+     "id": "mm4-32-256",
+     "name": "Mac mini M4 32GB/256GB (CTO)",
+     "ram": 32,
+     "ssd": 256,
+     "part": null,
+     "hintafi": 4973631,
+     "apple": null
+    },
+    {
+     "id": "mm4-32-512",
+     "name": "Mac mini M4 32GB/512GB (CTO)",
+     "ram": 32,
+     "ssd": 512,
+     "part": null,
+     "hintafi": 4973616,
+     "apple": null
+    },
+    {
+     "id": "mm4-32-1tb",
+     "name": "Mac mini M4 32GB/1TB (CTO)",
+     "ram": 32,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": 4973620,
+     "apple": null
+    },
+    {
+     "id": "mm4-32-2tb",
+     "name": "Mac mini M4 32GB/2TB (CTO)",
+     "ram": 32,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": null
+    }
+   ]
+  },
+  "Mac mini M4 Pro (2024)": {
+   "chip": "M4 Pro",
+   "apple_base": 1949.0,
+   "base_config": "24GB/512GB (12C/16C)",
+   "skus": [
+    {
+     "id": "mmp-12-24-512",
+     "name": "Mac mini M4 Pro 12C/16C 24GB/512GB",
+     "ram": 24,
+     "ssd": 512,
+     "part": "MCX44",
+     "hintafi": 4968479,
+     "apple": 1949.0
+    },
+    {
+     "id": "mmp-12-24-1tb",
+     "name": "Mac mini M4 Pro 12C/16C 24GB/1TB",
+     "ram": 24,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": null,
+     "apple": 2279.0
+    },
+    {
+     "id": "mmp-12-24-2tb",
+     "name": "Mac mini M4 Pro 12C/16C 24GB/2TB",
+     "ram": 24,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 2829.0
+    },
+    {
+     "id": "mmp-12-48-512",
+     "name": "Mac mini M4 Pro 12C/16C 48GB/512GB",
+     "ram": 48,
+     "ssd": 512,
+     "part": null,
+     "hintafi": 4973702,
+     "apple": 2609.0
+    },
+    {
+     "id": "mmp-12-48-1tb",
+     "name": "Mac mini M4 Pro 12C/16C 48GB/1TB",
+     "ram": 48,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": null,
+     "apple": 2939.0
+    },
+    {
+     "id": "mmp-12-48-2tb",
+     "name": "Mac mini M4 Pro 12C/16C 48GB/2TB",
+     "ram": 48,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 3489.0
+    },
+    {
+     "id": "mmp-12-64-512",
+     "name": "Mac mini M4 Pro 12C/16C 64GB/512GB (CTO)",
+     "ram": 64,
+     "ssd": 512,
+     "part": null,
+     "hintafi": 4973665,
+     "apple": null
+    },
+    {
+     "id": "mmp-14-24-512",
+     "name": "Mac mini M4 Pro 14C/20C 24GB/512GB",
+     "ram": 24,
+     "ssd": 512,
+     "part": null,
+     "hintafi": null,
+     "apple": 2169.0
+    },
+    {
+     "id": "mmp-14-24-1tb",
+     "name": "Mac mini M4 Pro 14C/20C 24GB/1TB",
+     "ram": 24,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": null,
+     "apple": 2499.0
+    },
+    {
+     "id": "mmp-14-24-2tb",
+     "name": "Mac mini M4 Pro 14C/20C 24GB/2TB",
+     "ram": 24,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 3049.0
+    },
+    {
+     "id": "mmp-14-48-512",
+     "name": "Mac mini M4 Pro 14C/20C 48GB/512GB",
+     "ram": 48,
+     "ssd": 512,
+     "part": null,
+     "hintafi": null,
+     "apple": 2829.0
+    },
+    {
+     "id": "mmp-14-48-1tb",
+     "name": "Mac mini M4 Pro 14C/20C 48GB/1TB",
+     "ram": 48,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": null,
+     "apple": 3159.0
+    },
+    {
+     "id": "mmp-14-48-2tb",
+     "name": "Mac mini M4 Pro 14C/20C 48GB/2TB",
+     "ram": 48,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 3709.0
+    },
+    {
+     "id": "mmp-14-64-1tb",
+     "name": "Mac mini M4 Pro 14C/20C 64GB/1TB (CTO)",
+     "ram": 64,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": null,
+     "apple": null
+    },
+    {
+     "id": "mmp-14-64-4tb",
+     "name": "Mac mini M4 Pro 14C/20C 64GB/4TB (CTO)",
+     "ram": 64,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": 4973687,
+     "apple": null
+    },
+    {
+     "id": "mmp-12-24-4tb",
+     "name": "Mac mini M4 Pro 12C/16C 24GB/4TB",
+     "ram": 24,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": null,
+     "apple": 3929.0
+    },
+    {
+     "id": "mmp-12-48-4tb",
+     "name": "Mac mini M4 Pro 12C/16C 48GB/4TB",
+     "ram": 48,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": null,
+     "apple": 4589.0
+    },
+    {
+     "id": "mmp-12-48-8tb",
+     "name": "Mac mini M4 Pro 12C/16C 48GB/8TB",
+     "ram": 48,
+     "ssd": 8192,
+     "part": null,
+     "hintafi": null,
+     "apple": 6789.0
+    },
+    {
+     "id": "mmp-14-24-4tb",
+     "name": "Mac mini M4 Pro 14C/20C 24GB/4TB",
+     "ram": 24,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": null,
+     "apple": 4149.0
+    },
+    {
+     "id": "mmp-14-48-4tb",
+     "name": "Mac mini M4 Pro 14C/20C 48GB/4TB",
+     "ram": 48,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": null,
+     "apple": 4809.0
+    },
+    {
+     "id": "mmp-14-48-8tb",
+     "name": "Mac mini M4 Pro 14C/20C 48GB/8TB",
+     "ram": 48,
+     "ssd": 8192,
+     "part": null,
+     "hintafi": null,
+     "apple": 7009.0
+    },
+    {
+     "id": "mmp-14-24-2tb-x",
+     "name": "Mac mini M4 Pro 14C/20C 24GB/2TB",
+     "ram": 24,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 3049.0
+    }
+   ]
+  },
+  "Mac Studio M4 Max (2025)": {
+   "chip": "M4 Max",
+   "apple_base": 3099.0,
+   "base_config": "14C/32C 36GB/512GB",
+   "skus": [
+    {
+     "id": "ms-m4max-36-512",
+     "name": "Mac Studio M4 Max 14C/32C 36GB/512GB",
+     "ram": 36,
+     "ssd": 512,
+     "part": null,
+     "hintafi": 5197275,
+     "apple": 3099.0
+    },
+    {
+     "id": "ms-m4max-36-1tb",
+     "name": "Mac Studio M4 Max 14C/32C 36GB/1TB",
+     "ram": 36,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": null,
+     "apple": 3429.0
+    },
+    {
+     "id": "ms-m4max-36-2tb",
+     "name": "Mac Studio M4 Max 14C/32C 36GB/2TB",
+     "ram": 36,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 3979.0
+    },
+    {
+     "id": "ms-m4max-36-4tb",
+     "name": "Mac Studio M4 Max 14C/32C 36GB/4TB",
+     "ram": 36,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": 5223421,
+     "apple": 5079.0
+    },
+    {
+     "id": "ms-m4max-36-8tb",
+     "name": "Mac Studio M4 Max 14C/32C 36GB/8TB",
+     "ram": 36,
+     "ssd": 8192,
+     "part": null,
+     "hintafi": 5223417,
+     "apple": 7279.0
+    },
+    {
+     "id": "ms-m4max-64-512",
+     "name": "Mac Studio M4 Max 16C/40C 64GB/512GB",
+     "ram": 64,
+     "ssd": 512,
+     "part": null,
+     "hintafi": null,
+     "apple": 4199.0
+    },
+    {
+     "id": "ms-m4max-64-1tb",
+     "name": "Mac Studio M4 Max 16C/40C 64GB/1TB",
+     "ram": 64,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": 5565587,
+     "apple": 4529.0
+    },
+    {
+     "id": "ms-m4max-64-2tb",
+     "name": "Mac Studio M4 Max 16C/40C 64GB/2TB",
+     "ram": 64,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 5079.0
+    },
+    {
+     "id": "ms-m4max-64-4tb",
+     "name": "Mac Studio M4 Max 16C/40C 64GB/4TB",
+     "ram": 64,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": null,
+     "apple": 6179.0
+    },
+    {
+     "id": "ms-m4max-64-8tb",
+     "name": "Mac Studio M4 Max 16C/40C 64GB/8TB",
+     "ram": 64,
+     "ssd": 8192,
+     "part": null,
+     "hintafi": null,
+     "apple": 8379.0
+    }
+   ]
+  },
+  "Mac Studio M3 Ultra (2025)": {
+   "chip": "M3 Ultra",
+   "apple_base": 6499.0,
+   "base_config": "28C/60C 96GB/1TB",
+   "skus": [
+    {
+     "id": "ms-m3u-96-1tb",
+     "name": "Mac Studio M3 Ultra 28C/60C 96GB/1TB",
+     "ram": 96,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": 5197274,
+     "apple": 6499.0
+    },
+    {
+     "id": "ms-m3u-96-2tb",
+     "name": "Mac Studio M3 Ultra 28C/60C 96GB/2TB",
+     "ram": 96,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": null,
+     "apple": 7049.0
+    },
+    {
+     "id": "ms-m3u-96-4tb",
+     "name": "Mac Studio M3 Ultra 28C/60C 96GB/4TB",
+     "ram": 96,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": null,
+     "apple": 8149.0
+    },
+    {
+     "id": "ms-m3u-96-8tb",
+     "name": "Mac Studio M3 Ultra 28C/60C 96GB/8TB",
+     "ram": 96,
+     "ssd": 8192,
+     "part": null,
+     "hintafi": null,
+     "apple": 10349.0
+    },
+    {
+     "id": "ms-m3u-96-16tb",
+     "name": "Mac Studio M3 Ultra 28C/60C 96GB/16TB",
+     "ram": 96,
+     "ssd": 16384,
+     "part": null,
+     "hintafi": 5223413,
+     "apple": 14749.0
+    },
+    {
+     "id": "ms-m3u-256-1tb",
+     "name": "Mac Studio M3 Ultra 28C/60C 256GB/1TB (CTO)",
+     "ram": 256,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": 5223423,
+     "apple": null
+    },
+    {
+     "id": "ms-m3u-256-16tb",
+     "name": "Mac Studio M3 Ultra 28C/60C 256GB/16TB (CTO)",
+     "ram": 256,
+     "ssd": 16384,
+     "part": null,
+     "hintafi": 5223411,
+     "apple": null
+    },
+    {
+     "id": "ms-m3u32-96-1tb",
+     "name": "Mac Studio M3 Ultra 32C/80C 96GB/1TB",
+     "ram": 96,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": null,
+     "apple": 8149.0
+    },
+    {
+     "id": "ms-m3u32-96-2tb",
+     "name": "Mac Studio M3 Ultra 32C/80C 96GB/2TB",
+     "ram": 96,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": 5223408,
+     "apple": 8699.0
+    },
+    {
+     "id": "ms-m3u32-96-4tb",
+     "name": "Mac Studio M3 Ultra 32C/80C 96GB/4TB",
+     "ram": 96,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": 5223412,
+     "apple": 9799.0
+    },
+    {
+     "id": "ms-m3u32-96-16tb",
+     "name": "Mac Studio M3 Ultra 32C/80C 96GB/16TB",
+     "ram": 96,
+     "ssd": 16384,
+     "part": null,
+     "hintafi": 5223420,
+     "apple": 16399.0
+    },
+    {
+     "id": "ms-m3u32-256-2tb",
+     "name": "Mac Studio M3 Ultra 32C/80C 256GB/2TB (CTO)",
+     "ram": 256,
+     "ssd": 2048,
+     "part": null,
+     "hintafi": 5223455,
+     "apple": null
+    },
+    {
+     "id": "ms-m3u32-256-4tb",
+     "name": "Mac Studio M3 Ultra 32C/80C 256GB/4TB (CTO)",
+     "ram": 256,
+     "ssd": 4096,
+     "part": null,
+     "hintafi": 5223412,
+     "apple": null
+    }
+   ]
+  },
+  "Mac Studio M2 (2023, bonus)": {
+   "chip": "M2 Max / M2 Ultra",
+   "apple_base": null,
+   "base_config": null,
+   "skus": [
+    {
+     "id": "ms-m2max-32-512",
+     "name": "Mac Studio M2 Max 32GB/512GB (2023)",
+     "ram": 32,
+     "ssd": 512,
+     "part": null,
+     "hintafi": 4212733,
+     "apple": null
+    },
+    {
+     "id": "ms-m2u-64-1tb",
+     "name": "Mac Studio M2 Ultra 64GB/1TB (2023)",
+     "ram": 64,
+     "ssd": 1024,
+     "part": null,
+     "hintafi": 4212731,
+     "apple": null
+    }
+   ]
+  },
+  "Mac mini M2 (2023, bonus)": {
+   "chip": "M2 8C/10C",
+   "apple_base": null,
+   "base_config": null,
+   "skus": [
+    {
+     "id": "mm2-8-256",
+     "name": "Mac mini M2 8GB/256GB (2023)",
+     "ram": 8,
+     "ssd": 256,
+     "part": "MMFJ3",
+     "hintafi": null,
+     "apple": null
+    },
+    {
+     "id": "mm2-8-512",
+     "name": "Mac mini M2 8GB/512GB (2023)",
+     "ram": 8,
+     "ssd": 512,
+     "part": "MMFJ3",
+     "hintafi": null,
+     "apple": null
+    }
+   ]
+  }
+ }
+}

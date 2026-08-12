@@ -1,0 +1,35 @@
+{
+ "store": "netonnet",
+ "fetched_at": "2026-08-12T02:20:00",
+ "note": "NetOnNet SE storefront (netonnet.se) — same catalog as netonnet.fi which serves Finland. SEK prices; price_eur = SEK/11.0 approx.",
+ "items": [
+  {
+   "title": "Apple Mac mini - M4 chip 10-core CPU 10-core GPU, 16GB RAM, 512GB SSD",
+   "price": 12390.0,
+   "price_eur": 1126.0,
+   "availability": "",
+   "url": "https://www.netonnet.se/art/dator-surfplatta/stationara-datorer/minidator/apple-mac-mini-m4-chip-10-core-cpu-10-core-gpu-16gb-ram-512gb-ssd/1036193.8944/"
+  },
+  {
+   "title": "Apple Mac mini - M4 chip 10-core CPU 10-core GPU, 24GB RAM, 512GB SSD",
+   "price": 14890.0,
+   "price_eur": 1354.0,
+   "availability": "",
+   "url": "https://www.netonnet.se/art/dator-surfplatta/stationara-datorer/minidator/apple-mac-mini-m4-chip-10-core-cpu-10-core-gpu-24gb-ram-512gb-ssd/1036187.8944/"
+  },
+  {
+   "title": "Apple Mac mini - M4 Pro chip 12-core CPU 16-core GPU, 24GB RAM, 512GB SSD",
+   "price": 19890.0,
+   "price_eur": 1808.0,
+   "availability": "",
+   "url": "https://www.netonnet.se/art/dator-surfplatta/stationara-datorer/minidator/apple-mac-mini-m4-pro-chip-12-core-cpu-16-core-gpu-24gb-ram-512gb-ssd/1036186.8944/"
+  },
+  {
+   "title": "Apple Mac Studio - M4 Max chip 14-core CPU 32-core GPU, 36GB RAM, 512GB SSD",
+   "price": 32990.0,
+   "price_eur": 2999.0,
+   "availability": "",
+   "url": "https://www.netonnet.se/art/dator-surfplatta/stationara-datorer/minidator/apple-mac-studio-m4-max-chip-14-core-cpu-32-core-gpu-36gb-ram-512gb-ssd/1054156.8944/"
+  }
+ ]
+}

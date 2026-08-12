@@ -1,0 +1,11 @@
+{
+  "store": "power",
+  "fetched_at": "2026-08-12T01:45:00",
+  "items": [
+    {"title": "Apple Mac Mini (2024, M4) 16/512 Gt", "price": 1219.0, "availability": "Toimitus myymälöistä, Click&Collect heti 18 myymälästä", "url": "https://www.power.fi/tietotekniikka/tietokoneet/poytakoneet/apple-mac-mini-2024-m4-16512-gt/p-3743805/"},
+    {"title": "Apple Mac Mini (2024, M4) 24/512 Gt", "price": 1439.0, "availability": "Saapuu 21.8.2026, Tilaa myymälään", "url": "https://www.power.fi/tietotekniikka/tietokoneet/poytakoneet/apple-mac-mini-2024-m4-24512-gt/p-3743806/"},
+    {"title": "Apple Mac Mini (2024, M4) 16/256 Gt", "price": 749.0, "availability": "Ei varastossa, Click&Collect", "url": "https://www.power.fi/tietotekniikka/tietokoneet/poytakoneet/apple-mac-mini-2024-m4-16256-gt/p-3743804/"},
+    {"title": "Apple Mac Mini (2024, M4 Pro) 24/512 Gt", "price": 1949.0, "availability": "Saapuu 18.9.2026, Tilaa myymälään", "url": "https://www.power.fi/tietotekniikka/tietokoneet/poytakoneet/apple-mac-mini-2024-m4-pro-24512-gt/p-3743807/"},
+    {"title": "Apple Mac Mini 2023 (M2) 8/256 Gt MMFJ3KS/A", "price": 499.0, "availability": "Ei varastossa, Click&Collect", "url": "https://www.power.fi/tietotekniikka/tietokoneet/poytakoneet/apple-mac-mini-2023-mmfj3ksa-256-gt/p-1934311/"}
+  ]
+}

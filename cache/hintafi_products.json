@@ -1,0 +1,829 @@
+{
+ "4212731": {
+  "id": "4212731",
+  "title": "Apple Mac Studio",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "4939.00",
+    "delivery": "Ei vahvistettu",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4212733": {
+  "id": "4212733",
+  "title": "Apple Mac Studio",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2355.00",
+    "delivery": "Ei vahvistettu",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4968479": {
+  "id": "4968479",
+  "title": "Apple Mac mini",
+  "rows": [
+   {
+    "shop": "Elisan Verkkokauppa",
+    "product": "Mac Mini M4 Pro 24 Gt/512 Gt (2024)",
+    "price": "1699.00",
+    "delivery": "2 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Scandinavian Photo",
+    "product": "Mac mini – M4 Pro 12-core CPU, 16-core GPU, 24GB RAM, 512GB SSD",
+    "price": "1890.00",
+    "delivery": "n. kaksi viikkoa",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "Jimm's PC-store",
+    "product": "Mac mini -tietokone, hopea",
+    "price": "1899.00",
+    "delivery": "Ei vahvistettu",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Verkkokauppa.com",
+    "product": "Apple Mac mini M4 Pro 24 Gt, 512 Gt -tietokone (MCX44)",
+    "price": "1949.00",
+    "delivery": "2 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Telia",
+    "product": "Apple Mac mini (M4 Pro). Hopea. 12-ydin suoritin / 16-ydin näytönohjain. 24 Gt / 512 Gt",
+    "price": "1949.00",
+    "delivery": "1-2 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Veikon Kone",
+    "product": "Apple Mac Mini M4 Pro 24gb/512gb Tietokone",
+    "price": "1949.00",
+    "delivery": "8 - 30 arkipäivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Power.fi",
+    "product": "Apple Mac Mini (2024, M4 Pro) 24/512 Gt",
+    "price": "1949.00",
+    "delivery": "39 - 43 päivää",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "Gigantti",
+    "product": "Mac mini M4 Pro/24/512 2024",
+    "price": "1949.00",
+    "delivery": "?",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2048.71",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "CS MEGASTORE",
+    "product": "Apple Mac mini , Apple M, M4 Pro, 24 GB, 512 GB, SSD, macOS Sequoia",
+    "price": "2054.27",
+    "delivery": "?",
+    "country": "Tanska"
+   },
+   {
+    "shop": "Data-Systems",
+    "product": "Apple Mac mini , Apple M, M4 Pro, 24 GB, 512 GB, SSD, macOS Sequoia (MCX44D/A)",
+    "price": "2076.55",
+    "delivery": "Tilaustuote, 2-4 viikkoa",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2099.00",
+    "delivery": "Ei vahvistettu",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Proshop",
+    "product": "Apple Mac mini | M4 Pro | 24GB | 512GB",
+    "price": "2127.91",
+    "delivery": "360 pv",
+    "country": "Tanska"
+   },
+   {
+    "shop": "Verkkokauppa.com",
+    "product": "Apple Mac mini M4 Pro 24 Gt, 512 Gt -tietokone (MCX44)",
+    "price": "2169.00",
+    "delivery": "2 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2345.90",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "3302.90",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973608": {
+  "id": "4973608",
+  "title": "Apple Mac Mini/M4 10C CPU &amp; 10C GPU/16GB RAM/1TB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1321.39",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1508.00",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973609": {
+  "id": "4973609",
+  "title": "Apple Mac Mini/M4 10C CPU &amp; 10C GPU/16GB RAM/2TB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1845.34",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2111.60",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973613": {
+  "id": "4973613",
+  "title": "Apple Mac Mini/M4 10C CPU &amp; 10C GPU/24GB RAM/1TB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1866.31",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2135.80",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973616": {
+  "id": "4973616",
+  "title": "Apple Mac Mini/M4 10C CPU &amp; 10C GPU/32GB RAM/512GB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1813.90",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2075.40",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973620": {
+  "id": "4973620",
+  "title": "Apple Mac Mini/M4 10C CPU &amp; 10C GPU/32GB RAM/1TB SSD/10 Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1976.34",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2262.50",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973622": {
+  "id": "4973622",
+  "title": "Apple Mac Mini/M4 10C CPU &amp; 10C GPU/24GB RAM/2TB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2442.66",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2799.80",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973631": {
+  "id": "4973631",
+  "title": "Apple Mac Mini/M4 10C CPU &amp; 10C GPU/32GB RAM/256GB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1321.39",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "1508.00",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973665": {
+  "id": "4973665",
+  "title": "Apple Mac Mini/M4 Pro 12C CPU &amp; 16C GPU/64GB RAM/512GB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "2840.87",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "3258.60",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973687": {
+  "id": "4973687",
+  "title": "Apple Mac Mini/M4 Pro 14C CPU &amp; 20C GPU/64GB RAM/4TB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "5146.27",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "5914.70",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973702": {
+  "id": "4973702",
+  "title": "Apple Mac Mini/M4 Pro 14C CPU &amp; 20C GPU/48GB RAM/512GB SSD/10 Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "3092.37",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "3548.40",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5197274": {
+  "id": "5197274",
+  "title": "Apple Mac Studio",
+  "rows": [
+   {
+    "shop": "Elisan Verkkokauppa",
+    "product": "Mac Studio M3 Ultra 1Tt (2025)",
+    "price": "5099.00",
+    "delivery": "2 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Scandinavian Photo",
+    "product": "Mac Studio - M3 Ultra 28‑core CPU, 60-core GPU, 96GB RAM, 1TB SSD, Silver",
+    "price": "6490.00",
+    "delivery": "n. kaksi viikkoa",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "Telia",
+    "product": "Apple Mac Studio (M3 Ultra). Hopea",
+    "price": "6499.00",
+    "delivery": "1-2 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Verkkokauppa.com",
+    "product": "Apple Mac Studio M3 Ultra 96 Gt, 1 Tt -tietokone (MU973)",
+    "price": "6499.00",
+    "delivery": "23 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Veikon Kone",
+    "product": "Apple Mac Studio M3 Ultra 96gb/1tb Pöytätietokone",
+    "price": "6499.00",
+    "delivery": "8 - 30 arkipäivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Power.fi",
+    "product": "Apple Mac Studio (M3 Ultra) 1 Tt",
+    "price": "6499.00",
+    "delivery": "39 - 43 päivää",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "Gigantti",
+    "product": "Mac Studio M3 Ultra/96/1TB 2025",
+    "price": "6499.00",
+    "delivery": "?",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "6802.18",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "7822.60",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5197275": {
+  "id": "5197275",
+  "title": "Apple Mac Studio",
+  "rows": [
+   {
+    "shop": "Elisan Verkkokauppa",
+    "product": "Mac Studio M4 Max 512Gt (2025)",
+    "price": "2599.00",
+    "delivery": "2 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Telia",
+    "product": "Apple Mac Studio (M4 Max). Hopea",
+    "price": "3099.00",
+    "delivery": "1-2 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Scandinavian Photo",
+    "product": "Mac Studio - M4 Max 14‑core CPU, 32-core GPU, 36GB RAM, 512GB SSD, Silver",
+    "price": "3099.00",
+    "delivery": "n. kaksi viikkoa",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "Verkkokauppa.com",
+    "product": "Apple Mac Studio M4 Max 36 Gt, 512 Gt -tietokone (MU963)",
+    "price": "3099.00",
+    "delivery": "23 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Veikon Kone",
+    "product": "Apple Mac Studio M4 Max 36gb/512gb Pöytätietokone",
+    "price": "3099.00",
+    "delivery": "8 - 30 arkipäivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Gigantti",
+    "product": "Mac Studio M4 Max/36/512GB 2025",
+    "price": "3099.00",
+    "delivery": "?",
+    "country": "Ruotsi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "3250.12",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "3305.00",
+    "delivery": "Ei vahvistettu",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "3730.10",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223408": {
+  "id": "5223408",
+  "title": "Apple Mac Studio 2025/M3 Ultra 32C CPU &amp; 80C GPU/256GB RAM/2TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "13739.15",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "15814.90",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223411": {
+  "id": "5223411",
+  "title": "Apple Mac Studio 2025/M3 Ultra 32C CPU &amp; 80C GPU/256GB RAM/16TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "21808.06",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "25111.30",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223412": {
+  "id": "5223412",
+  "title": "Apple Mac Studio 2025/M3 Ultra 32C CPU &amp; 80C GPU/256GB RAM/4TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "14891.84",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "17142.90",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223413": {
+  "id": "5223413",
+  "title": "Apple Mac Studio 2025/M3 Ultra 28C CPU &amp; 60C GPU/256GB RAM/16TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "20078.98",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "23119.20",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223417": {
+  "id": "5223417",
+  "title": "Apple Mac Studio 2025/M4 Max 14C CPU &amp; 32C GPU/36GB RAM/8TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "7640.29",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "8788.20",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223420": {
+  "id": "5223420",
+  "title": "Apple Mac Studio 2025/M3 Ultra 32C CPU &amp; 80C GPU/96GB RAM/16TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "17197.24",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "19799.00",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223421": {
+  "id": "5223421",
+  "title": "Apple Mac Studio 2025/M4 Max 14C CPU &amp; 32C GPU/36GB RAM/4TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "5334.89",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "6132.00",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223423": {
+  "id": "5223423",
+  "title": "Apple Mac Studio 2025/M3 Ultra 28C CPU &amp; 60C GPU/256GB RAM/1TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "11433.73",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "13158.70",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5223455": {
+  "id": "5223455",
+  "title": "Apple Mac Studio 2025/M3 Ultra 32C CPU &amp; 80C GPU/256GB RAM/16TB SSD",
+  "rows": [
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "19817.03",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "22817.40",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5327325": {
+  "id": "5327325",
+  "title": "Apple Mac mini",
+  "rows": [
+   {
+    "shop": "Proshop",
+    "product": "Apple Mac mini | M4 | 16GB | 256GB",
+    "price": "785.75",
+    "delivery": "360 pv",
+    "country": "Tanska"
+   },
+   {
+    "shop": "grey",
+    "product": "",
+    "price": "795.00",
+    "delivery": "Ei vahvistettu",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Jimm's PC-store",
+    "product": "Mac mini -tietokone, hopea",
+    "price": "829.00",
+    "delivery": "Ei vahvistettu",
+    "country": "Suomi"
+   },
+   {
+    "shop": "Tietokonekauppa.fi",
+    "product": "Apple Mac Mini M4 16GB 256GB Apple M4 10-core Apple macOS Sequoia 15.0",
+    "price": "971.30",
+    "delivery": "3 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "5565587": {
+  "id": "5565587",
+  "title": "Apple Mac Studio",
+  "rows": [
+   {
+    "shop": "Data-Systems",
+    "product": "Apple Mac Studio , Apple M, M4 Max, 64 GB, 1 TB, SSD, macOS Sequoia (MHQH4D/A)",
+    "price": "3665.55",
+    "delivery": "Tilaustuote, 2-4 viikkoa",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973685": {
+  "id": 4973685,
+  "title": "Apple Mac Mini/M4 10C CPU & 10C GPU/24GB RAM/1TB SSD/10 Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "",
+    "product": "",
+    "price": "1981.57",
+    "total": "1989.57",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "",
+    "product": "",
+    "price": "2268.60",
+    "total": "2274.57",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973611": {
+  "id": 4973611,
+  "title": "Apple Mac Mini/M4 10C CPU & 10C GPU/24GB RAM/2TB SSD/10 Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "",
+    "product": "",
+    "price": "2238.31",
+    "total": "2246.31",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "",
+    "product": "",
+    "price": "2564.40",
+    "total": "2570.37",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973625": {
+  "id": 4973625,
+  "title": "Apple Mac Mini/M4 10C CPU & 10C GPU/32GB RAM/512GB SSD/10 Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "",
+    "product": "",
+    "price": "1714.34",
+    "total": "1722.34",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "",
+    "product": "",
+    "price": "1960.70",
+    "total": "1966.67",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973626": {
+  "id": 4973626,
+  "title": "Apple Mac Mini/M4 10C CPU & 10C GPU/16GB RAM/2TB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "Verkkokauppa.com",
+    "product": "Apple Mac mini M4 16 Gt, 2 Tt -tietokone (MU9E3)",
+    "price": "2099.00",
+    "total": "2104.99",
+    "delivery": "43 pv",
+    "country": "Suomi"
+   },
+   {
+    "shop": "",
+    "product": "",
+    "price": "2212.11",
+    "total": "2220.11",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "",
+    "product": "",
+    "price": "2534.20",
+    "total": "2540.17",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ },
+ "4973629": {
+  "id": 4973629,
+  "title": "Apple Mac Mini/M4 10C CPU & 10C GPU/16GB RAM/1TB SSD/Gigabit Ethernet",
+  "rows": [
+   {
+    "shop": "",
+    "product": "",
+    "price": "1635.75",
+    "total": "1643.75",
+    "delivery": "5-21 päivää",
+    "country": "Suomi"
+   },
+   {
+    "shop": "",
+    "product": "",
+    "price": "1870.20",
+    "total": "1876.17",
+    "delivery": "14 pv",
+    "country": "Suomi"
+   }
+  ]
+ }
+}

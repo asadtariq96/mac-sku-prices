@@ -1,0 +1,253 @@
+{
+ "head": {
+  "status": "200",
+  "data": {}
+ },
+ "body": {
+  "options": {
+   "processor-dimensionChip": {
+    "compatibleOptions": {
+     "m4max": {
+      "isSelected": true,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "m3ultra": {
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   },
+   "memory-dimensionMemory": {
+    "compatibleOptions": {
+     "64gb": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {
+     "96gb": {
+      "isBlocked": false
+     }
+    },
+    "hasChanged": false
+   },
+   "processor-dimensionChip-cpuCoreCount-gpuCoreCount": {
+    "compatibleOptions": {
+     "m4max-14-32": {
+      "priceDelta": "-330_00",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "m4max-16-40": {
+      "priceDelta": "0_0",
+      "isSelected": true,
+      "isDefault": false,
+      "isBlocked": false
+     },
+     "m3ultra-28-60": {
+      "priceDelta": "1090_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     },
+     "m3ultra-32-80": {
+      "priceDelta": "2740_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   },
+   "storage-dimensionCapacity": {
+    "compatibleOptions": {
+     "512gb": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "1tb": {
+      "priceDelta": "330_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     },
+     "2tb": {
+      "priceDelta": "880_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     },
+     "4tb": {
+      "priceDelta": "1980_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     },
+     "8tb": {
+      "priceDelta": "4180_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {
+     "16tb": {
+      "isBlocked": false
+     }
+    },
+    "hasChanged": false
+   },
+   "software_logic-preInstalledSoftware": {
+    "compatibleOptions": {
+     "none": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "logic_pro": {
+      "priceDelta": "229_99",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   },
+   "software_final-preInstalledSoftware": {
+    "compatibleOptions": {
+     "none": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "final_cut_pro": {
+      "priceDelta": "349_99",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   }
+  },
+  "prices": {
+   "0_0": {
+    "displayPrice": "+ 0,00 \u20ac",
+    "amount": 0.0
+   },
+   "330_00": {
+    "displayPrice": "+ 330,00 \u20ac",
+    "amount": 330.0
+   },
+   "880_00": {
+    "displayPrice": "+ 880,00 \u20ac",
+    "amount": 880.0
+   },
+   "4180_00": {
+    "displayPrice": "+ 4\u00a0180,00 \u20ac",
+    "amount": 4180.0
+   },
+   "2740_00": {
+    "displayPrice": "+ 2\u00a0740,00 \u20ac",
+    "amount": 2740.0
+   },
+   "229_99": {
+    "displayPrice": "+ 229,99 \u20ac",
+    "amount": 229.99
+   },
+   "349_99": {
+    "displayPrice": "+ 349,99 \u20ac",
+    "amount": 349.99
+   },
+   "-330_00": {
+    "displayPrice": "&minus; 330,00 \u20ac",
+    "amount": -330.0
+   },
+   "1090_00": {
+    "displayPrice": "+ 1\u00a0090,00 \u20ac",
+    "amount": 1090.0
+   },
+   "1980_00": {
+    "displayPrice": "+ 1\u00a0980,00 \u20ac",
+    "amount": 1980.0
+   }
+  },
+  "selectedKits": {
+   "aosContainerPartNumber": "MAC_STUDIO_2025_ROC_BB",
+   "type": "CONFIGURABLE",
+   "dimensions": {
+    "processor-dimensionChip": {
+     "dimensionValue": "m4max",
+     "partNumber": "065-CGWJ"
+    },
+    "memory-dimensionMemory": {
+     "dimensionValue": "64gb",
+     "partNumber": "065-CGWP"
+    },
+    "processor-dimensionChip-cpuCoreCount-gpuCoreCount": {
+     "dimensionValue": "m4max-16-40",
+     "partNumber": "065-CGWJ"
+    },
+    "storage-dimensionCapacity": {
+     "dimensionValue": "512gb",
+     "partNumber": "065-CKT9"
+    },
+    "software_final-preInstalledSoftware": {
+     "dimensionValue": "none",
+     "partNumber": "065-CGXT"
+    },
+    "software_logic-preInstalledSoftware": {
+     "dimensionValue": "none",
+     "partNumber": "065-CGXW"
+    }
+   },
+   "productConfiguration": {
+    "memory": "065-CGWP",
+    "thunderbolt": "065-CGXJ",
+    "storage": "065-CKT9",
+    "ethernet_adapter": "065-CGXH",
+    "countrykit": "KS065-CKTJ",
+    "software_final": "065-CGXT",
+    "processor": "065-CGWJ",
+    "software_logic": "065-CGXW"
+   },
+   "priceData": {
+    "comparativeDisplayPrice": "Alkaen <span class=\"nowrap\">4\u00a0199 \u20ac</span>",
+    "amount": 4199.0,
+    "fullPrice-comparative": "Alkaen <span class=\"nowrap\">4\u00a0199 \u20ac</span>",
+    "currentPrice": {
+     "amount": "4\u00a0199,00 \u20ac",
+     "raw_amount": "4199.00"
+    },
+    "fullPrice": "4\u00a0199,00 \u20ac",
+    "seoPrice": 4199.0
+   },
+   "priceDisplayOrder": {
+    "short": [
+     "fullPrice"
+    ],
+    "full": [
+     "fullPrice-comparative"
+    ]
+   }
+  },
+  "isReset": false,
+  "footnotes": {
+   "nextAvailableNumber": 1
+  }
+ }
+}

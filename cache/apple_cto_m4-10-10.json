@@ -1,0 +1,244 @@
+{
+ "head": {
+  "status": "200",
+  "data": {}
+ },
+ "body": {
+  "options": {
+   "ethernet_adapter-ethernetBandwidth": {
+    "compatibleOptions": {
+     "1gb_per_second": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "10gb_per_second": {
+      "priceDelta": "110_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   },
+   "processor-dimensionChip": {
+    "compatibleOptions": {
+     "m4": {
+      "isSelected": true,
+      "isDefault": true,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   },
+   "memory-dimensionMemory": {
+    "compatibleOptions": {
+     "16gb": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "24gb": {
+      "priceDelta": "220_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {
+     "48gb": {
+      "isBlocked": false
+     }
+    },
+    "hasChanged": false
+   },
+   "processor-dimensionChip-cpuCoreCount-gpuCoreCount": {
+    "compatibleOptions": {
+     "m4-10-10": {
+      "priceDelta": "0_0",
+      "isSelected": true,
+      "isDefault": true,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   },
+   "storage-dimensionCapacity": {
+    "compatibleOptions": {
+     "256gb": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "512gb": {
+      "priceDelta": "220_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     },
+     "1tb": {
+      "priceDelta": "550_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     },
+     "2tb": {
+      "priceDelta": "1100_00",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {
+     "4tb": {
+      "isBlocked": false
+     },
+     "8tb": {
+      "isBlocked": false
+     }
+    },
+    "hasChanged": false
+   },
+   "software_logic-preInstalledSoftware": {
+    "compatibleOptions": {
+     "none": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "logic_pro": {
+      "priceDelta": "229_99",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   },
+   "software_final-preInstalledSoftware": {
+    "compatibleOptions": {
+     "none": {
+      "priceDelta": "0_0",
+      "isSelected": false,
+      "isDefault": true,
+      "isBlocked": false
+     },
+     "final_cut_pro": {
+      "priceDelta": "349_99",
+      "isSelected": false,
+      "isDefault": false,
+      "isBlocked": false
+     }
+    },
+    "upgradeOptions": {},
+    "hasChanged": false
+   }
+  },
+  "prices": {
+   "0_0": {
+    "displayPrice": "+ 0,00 \u20ac",
+    "amount": 0.0
+   },
+   "1100_00": {
+    "displayPrice": "+ 1\u00a0100,00 \u20ac",
+    "amount": 1100.0
+   },
+   "220_00": {
+    "displayPrice": "+ 220,00 \u20ac",
+    "amount": 220.0
+   },
+   "110_00": {
+    "displayPrice": "+ 110,00 \u20ac",
+    "amount": 110.0
+   },
+   "349_99": {
+    "displayPrice": "+ 349,99 \u20ac",
+    "amount": 349.99
+   },
+   "229_99": {
+    "displayPrice": "+ 229,99 \u20ac",
+    "amount": 229.99
+   },
+   "550_00": {
+    "displayPrice": "+ 550,00 \u20ac",
+    "amount": 550.0
+   }
+  },
+  "selectedKits": {
+   "aosContainerPartNumber": "MAC_MINI_2024_ROC_GBB",
+   "type": "PRECONFIGURED_BTR",
+   "btrOrFdPartNumber": "MU9D3KS/A",
+   "dimensions": {
+    "ethernet_adapter-ethernetBandwidth": {
+     "dimensionValue": "1gb_per_second",
+     "partNumber": "065-CGYX"
+    },
+    "processor-dimensionChip": {
+     "dimensionValue": "m4",
+     "partNumber": "065-CGYC"
+    },
+    "memory-dimensionMemory": {
+     "dimensionValue": "16gb",
+     "partNumber": "065-CGYH"
+    },
+    "processor-dimensionChip-cpuCoreCount-gpuCoreCount": {
+     "dimensionValue": "m4-10-10",
+     "partNumber": "065-CGYC"
+    },
+    "storage-dimensionCapacity": {
+     "dimensionValue": "256gb",
+     "partNumber": "065-CJY5"
+    },
+    "software_final-preInstalledSoftware": {
+     "dimensionValue": "none",
+     "partNumber": "065-CH3P"
+    },
+    "software_logic-preInstalledSoftware": {
+     "dimensionValue": "none",
+     "partNumber": "065-CH3T"
+    }
+   },
+   "productConfiguration": {
+    "memory": "065-CGYH",
+    "thunderbolt": "065-CH00",
+    "storage": "065-CJY5",
+    "ethernet_adapter": "065-CGYX",
+    "countrykit": "KS065-CH3K",
+    "software_final": "065-CH3P",
+    "processor": "065-CGYC",
+    "software_logic": "065-CH3T"
+   },
+   "priceData": {
+    "comparativeDisplayPrice": "Alkaen <span class=\"nowrap\">999 \u20ac</span>",
+    "amount": 999.0,
+    "fullPrice-comparative": "Alkaen <span class=\"nowrap\">999 \u20ac</span>",
+    "currentPrice": {
+     "amount": "999,00 \u20ac",
+     "raw_amount": "999.00"
+    },
+    "fullPrice": "999,00 \u20ac",
+    "seoPrice": 999.0
+   },
+   "priceDisplayOrder": {
+    "short": [
+     "fullPrice"
+    ],
+    "full": [
+     "fullPrice-comparative"
+    ]
+   }
+  },
+  "isReset": false,
+  "footnotes": {
+   "nextAvailableNumber": 1
+  }
+ }
+}

@@ -1,0 +1,11 @@
+{
+  "store": "webhallen",
+  "fetched_at": "2026-08-12T02:10:00",
+  "note": "SEK prices (Swedish storefront, ships to Finland). price_eur = SEK/11.0 approx.",
+  "items": [
+    {"title": "Apple Mac mini / M4 chip / 10-core CPU / 10-core GPU / 16GB / 512GB SSD", "price": 11990.0, "price_eur": 1090.0, "availability": "Webblager (discount -1100 kr)", "url": "https://www.webhallen.com/se/product/376336-Apple-Mac-mini-M4-chip-10-core-CPU-10-core-GPU-16GB-512GB-SSD"},
+    {"title": "Apple Mac mini / M4 chip / 10-core CPU / 10-core GPU / 24GB / 512GB SSD", "price": 15690.0, "price_eur": 1426.0, "availability": "Webblager", "url": "https://www.webhallen.com/se/product/376334-Apple-Mac-mini-M4-chip-10-core-CPU-10-core-GPU-24GB-512GB-SSD"},
+    {"title": "Apple Mac mini / M4 Pro chip / 12-core CPU / 16-core GPU / 24GB / 512GB SSD", "price": 20990.0, "price_eur": 1908.0, "availability": "Webblager", "url": "https://www.webhallen.com/se/product/376333-Apple-Mac-mini-M4-Pro-chip-12-core-CPU-16-core-GPU-24GB-512GB-SSD"},
+    {"title": "Apple Mac Studio M4 Max chip with 14-core CPU / 32-core GPU / 36GB / 512GB", "price": 32990.0, "price_eur": 2999.0, "availability": "Webblager", "url": "https://www.webhallen.com/se/product/383126-Apple-Mac-Studio-M4-Max-chip-with-14-core-CPU-32-core-GPU-36GB-512GB"}
+  ]
+}

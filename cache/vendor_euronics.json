@@ -1,0 +1,10 @@
+{
+  "store": "euronics",
+  "fetched_at": "2026-08-12T02:15:00",
+  "note": "Euronics Finland (Confirma platform). Search URL: /fi/s/search/?keywords=...",
+  "items": [
+    {"title": "APPLE MAC MINI M4 16GB/512GB PÖYTÄTIETOKONE", "price": 1219.0, "availability": "", "url": "https://www.euronics.fi/fi/s/search/?keywords=mac+mini"},
+    {"title": "APPLE MAC MINI M4 24GB/512GB TIETOKONE", "price": 1439.0, "availability": "", "url": "https://www.euronics.fi/fi/s/search/?keywords=mac+mini"},
+    {"title": "APPLE MAC MINI M4 PRO 24GB/512GB TIETOKONE", "price": 1949.0, "availability": "", "url": "https://www.euronics.fi/fi/s/search/?keywords=mac+mini"}
+  ]
+}

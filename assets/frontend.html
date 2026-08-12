@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mac mini / Mac Studio — price & availability (FI)</title>
+<link rel="stylesheet" href="../assets/tabulator_midnight.min.css">
+<style>
+:root{--bg:#101418;--panel:#161b22;--border:#2a313c;--text:#dbe2ea;--dim:#8b95a5;--acc:#4da3ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:13px}
+header{position:sticky;top:0;z-index:50;background:var(--panel);border-bottom:1px solid var(--border);padding:10px 16px}
+h1{font-size:17px;margin:0 0 2px}
+.sub{color:var(--dim);font-size:12px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px}
+.toolbar label{color:var(--dim);font-size:12px;margin-right:2px;display:flex;align-items:center;gap:5px;cursor:pointer}
+select,input[type=text]{background:#0d1117;color:var(--text);border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:12px}
+input[type=text]:focus,select:focus{outline:none;border-color:var(--acc)}
+button{background:#1f2630;color:var(--text);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:12px;cursor:pointer}
+button:hover{border-color:var(--acc)}
+#stats{color:var(--dim);font-size:12px;margin-left:auto;white-space:nowrap}
+details.vendors{position:relative}
+details.vendors summary{cursor:pointer;color:var(--dim);font-size:12px;user-select:none}
+.vendor-panel{position:absolute;right:0;top:24px;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:10px;width:360px;max-height:420px;overflow:auto;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.vendor-panel .vp-head{display:flex;gap:6px;margin-bottom:6px}
+.vendor-panel label{display:block;color:var(--text);font-size:12px;padding:2px 4px;white-space:nowrap;cursor:pointer}
+.vendor-panel label:hover{background:#1d242e}
+#grid-wrap{margin:10px 16px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.tabulator{font-size:12px;background:transparent}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content{background:#1a212b}
+.tabulator-row.tabulator-row-even{background:#12171f}
+.tabulator-row.tabulator-row-odd{background:#0f141b}
+.tabulator-row.tabulator-row-selected{background:#1b2b3d}
+.cell-price{font-variant-numeric:tabular-nums}
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600}
+.badge.mini{background:#17324f;color:#7cc0ff}
+.badge.studio{background:#3a1d4a;color:#d9a6ff}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.dot.ok{background:#3ddc84}.dot.warn{background:#f0b429}.dot.bad{background:#e5534b}.dot.na{background:#3a4250}
+.konf{font-weight:600;color:#e8eef5}
+.cto{color:var(--dim);font-weight:400;font-size:11px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Mac mini / Mac Studio — price &amp; availability (FI)</h1>
+  <div class="sub" id="subline"></div>
+  <div class="toolbar">
+    <input type="text" id="q" placeholder="Search: model, chip, RAM, SSD, vendor…" style="width:270px">
+    <select id="f-type"><option value="">Type: all</option></select>
+    <select id="f-chip"><option value="">Chip: all</option></select>
+    <select id="f-ram"><option value="">RAM: all</option></select>
+    <select id="f-ssd"><option value="">SSD: all</option></select>
+    <label><input type="checkbox" id="f-stock"> in stock only</label>
+    <details class="vendors" id="vd">
+      <summary>Vendors ▾</summary>
+      <div class="vendor-panel">
+        <div class="vp-head">
+          <button id="vp-all" style="flex:1">All</button>
+          <button id="vp-none" style="flex:1">None</button>
+          <button id="vp-dom" style="flex:1">Domestic</button>
+        </div>
+        <div id="vp-list"></div>
+      </div>
+    </details>
+    <button id="btn-csv">Export CSV</button>
+    <button id="btn-clear">Reset</button>
+    <span id="stats"></span>
+  </div>
+</header>
+<div id="grid-wrap"><div id="grid"></div></div>
+<div id="errbar" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#5a1e1e;color:#ffd7d7;font-size:12px;padding:6px 12px;z-index:99;white-space:pre-wrap"></div>
+<script>
+window.addEventListener("error", function (e) {
+  var bar = document.getElementById("errbar");
+  bar.style.display = "block";
+  bar.textContent += "[error] " + (e.message || "?") + "\n";
+});
+window.addEventListener("unhandledrejection", function (e) {
+  var bar = document.getElementById("errbar");
+  bar.style.display = "block";
+  bar.textContent += "[rejection] " + ((e.reason && e.reason.message) || e.reason || "?") + "\n";
+});
+</script>
+<script src="../assets/tabulator.min.js"></script>
+<script>
+"use strict";
+const DATA = __DATA__;
+const VENDORS = __VENDORS__; // [[key, display], ...]
+const META = __META__; // {generated, src}
+const DISP = Object.fromEntries(VENDORS);
+const vendorKeys = VENDORS.map(v => v[0]);
+const vendorVis = new Set(vendorKeys);
+
+document.getElementById("subline").textContent =
+  "Updated " + META.generated + " · prices EUR incl. VAT · " + META.src;
+
+// ---------- pure helpers (no table access) ----------
+const fmtGB = v => v >= 1024 ? (v/1024) + " TB" : v + " GB";
+function shortChip(d) {
+  for (const c of ["M4 Pro","M3 Ultra","M4 Max","M2 Ultra","M2 Max"]) if (d.name.indexOf(c) >= 0) return c;
+  if (d.name.indexOf("M2") >= 0) return "M2";
+  if (d.name.indexOf("M4") >= 0) return "M4";
+  return (d.chip_full || "").split(" ")[0] || "";
+}
+function avEN(a){
+  if (!a) return a;
+  let s = a;
+  const map = [
+    ["Ikke på lager","out of stock"], ["Ei varastossa","not in stock"],
+    ["Verkkokaupan varastossa","online stock"], ["Rajoitettu saatavuus","limited availability"],
+    ["Tilaustuote","made to order"], ["Varastossa","in stock"], ["Loppu","sold out"],
+    ["Ei vahvistettu","unconfirmed"], ["Saapuu","arriving"], ["Webblager","web warehouse"],
+    ["Nouto myymälästä","store pickup"], ["toimitus myymälöistä","delivery from stores"],
+    ["heti","immediately"], ["alk.","from"],
+  ];
+  map.forEach(([f,t]) => { s = s.replace(new RegExp(f.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"), "gi"), t); });
+  s = s.replace(/(\d{1,2})\s*pv\b/gi, "$1 days");
+  return s;
+}
+function inStock(a){
+  if (!a) return false;
+  const s = a.toLowerCase();
+  if (/(ei varastossa|loppu|ikke p\u00e5 lager|tilaus|saapuu|ei vahvistettu|unconfirmed|out of stock|\bslut\b|ei saatav)/.test(s)) return false;
+  if (/(varastossa|in stock|\blager\b|click\s?&\s?collect|heti|toimitus myym\u00e4l\u00f6ist\u00e4|saatavilla|rajoitettu saatavuus|available)/.test(s)) return true;
+  const m = s.match(/(\d{1,2})\s*[-–]?\s*(\d{1,2})?\s*(?:pv|p\u00e4iv)/);
+  if (m) return parseInt(m[1]) <= 7;
+  return false;
+}
+function stockState(a){
+  if (!a) return "na";
+  if (/(ei varastossa|loppu|ikke p\u00e5 lager|tilaus|saapuu|slut|unconfirmed|ei vahvistettu)/i.test(a)) return "bad";
+  if (/(rajoitettu saatavuus|limited)/i.test(a)) return "warn";
+  if (inStock(a)) return "ok";
+  return "na";
+}
+function cheapestFor(d){
+  let best = null;
+  for (const k of d.vkeys){
+    if (!vendorVis.has(k)) continue;
+    const v = d["v_"+k];
+    if (v && v.p != null && (best == null || v.p < best.p)) best = {p: v.p, d: DISP[k]};
+  }
+  return best;
+}
+
+// ---------- data prepass: precompute display fields (formatters stay pure) ----------
+DATA.forEach(d => {
+  d._chip = shortChip(d);
+  d._ram = fmtGB(d.ram);
+  d._ssd = fmtGB(d.ssd);
+  d.vkeys = [];
+  for (const k of vendorKeys){
+    const x = d.vendors[k];
+    if (!x) continue;
+    d.vkeys.push(k);
+    const p = x.p, a = x.a || "";
+    const disp = (p != null ? (x.m ? "from " : "") + p.toLocaleString("fi-FI") + " €" : "")
+               + (a ? " · " + avEN(a) : "");
+    d["v_"+k] = {p: p, st: stockState(a), disp: disp};
+  }
+  d.halvin = cheapestFor(d);
+});
+
+// ---------- columns ----------
+const metaCols = [
+  {title:"Config", field:"name", frozen:true, width:250, headerSort:true,
+   formatter:c => '<span class="konf">'+c.getValue()+'</span>'},
+  {title:"Type", field:"type", width:95,
+   formatter:c => '<span class="badge '+(c.getValue()==="Mac mini"?"mini":"studio")+'">'+c.getValue()+"</span>"},
+  {title:"Chip", field:"_chip", width:90},
+  {title:"CPU", field:"cpu", width:52, sorter:"number", hozAlign:"right"},
+  {title:"GPU", field:"gpu", width:52, sorter:"number", hozAlign:"right"},
+  {title:"RAM", field:"_ram", width:72, sorter:"number", hozAlign:"right", accessor:(v,d)=>d.ram},
+  {title:"SSD", field:"_ssd", width:80, sorter:"number", hozAlign:"right", accessor:(v,d)=>d.ssd},
+  {title:"Code", field:"part", width:95},
+  {title:"Apple RRP", field:"apple", width:105, sorter:"number", hozAlign:"right",
+   formatter:c => c.getValue()!=null ? c.getValue().toLocaleString("fi-FI")+" €" : "—"},
+];
+const priceSorter = (a,b) => (a && a.p != null ? a.p : Infinity) - (b && b.p != null ? b.p : Infinity);
+const vendorCols = VENDORS.map(([k,title]) => ({
+  title, field:"v_"+k, width:118, headerSort:true, sorter:priceSorter, hozAlign:"right",
+  formatter:c => {
+    const v = c.getValue();
+    if (!v) return "—";
+    return '<span class="dot '+v.st+'"></span><span class="cell-price">'+v.disp+'</span>';
+  },
+}));
+
+// ---------- table ----------
+const table = new Tabulator("#grid", {
+  data: DATA, layout:"fitData", maxHeight:"calc(100vh - 130px)",
+  columns: metaCols.concat(vendorCols, [{
+    title:"Cheapest", field:"halvin", width:150, headerSort:true, sorter:priceSorter, hozAlign:"right",
+    formatter:c => {
+      const b = c.getValue();
+      return b ? '<span class="cell-price" style="font-weight:700;color:#3ddc84">'+b.p.toLocaleString("fi-FI")+' €</span> <span style="color:var(--dim)">· '+b.d+"</span>" : "—";
+    }
+  }]),
+  placeholder:"No results — adjust filters",
+  initialSort:[{column:"name",dir:"asc"}],
+});
+
+// ---------- filters (manual: Array.filter + setData — Tabulator's setFilter pipeline
+// recurses in Firefox with function filters) ----------
+function rowPasses(d, q, ft, fc, fr, fs, st){
+  if (ft && d.type !== ft) return false;
+  if (fc && d._chip !== fc) return false;
+  if (fr && d._ram !== fr) return false;
+  if (fs && d._ssd !== fs) return false;
+  if (st){
+    let ok = d.apple != null;
+    for (const k of d.vkeys){
+      if (!vendorVis.has(k)) continue;
+      const v = d["v_"+k];
+      if (v && (v.st === "ok" || v.st === "warn")) { ok = true; break; }
+    }
+    if (!ok) return false;
+  }
+  if (q){
+    const hay = [d.name, d.type, d._chip, d._ram, d._ssd, d.part||"", d.chip_full]
+      .concat(d.vkeys.map(k => DISP[k])).join(" ").toLowerCase();
+    if ((hay + " " + (d.halvin ? d.halvin.d.toLowerCase() : "")).indexOf(q) < 0) return false;
+  }
+  return true;
+}
+function applyFilters(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const ft = document.getElementById("f-type").value;
+  const fc = document.getElementById("f-chip").value;
+  const fr = document.getElementById("f-ram").value;
+  const fs = document.getElementById("f-ssd").value;
+  const st = document.getElementById("f-stock").checked;
+  const any = !!(q || ft || fc || fr || fs || st);
+  const active = any ? DATA.filter(d => rowPasses(d, q, ft, fc, fr, fs, st)) : DATA;
+  table.setData(active);
+  updateStats(active);
+}
+function updateStats(active){
+  try {
+    const total = DATA.length;
+    let instock = 0;
+    active.forEach(d => {
+      if (d.apple != null) { instock++; return; }
+      for (const k of d.vkeys){
+        if (!vendorVis.has(k)) continue;
+        const v = d["v_"+k];
+        if (v && (v.st === "ok" || v.st === "warn")) { instock++; return; }
+      }
+    });
+    document.getElementById("stats").textContent = active.length + " / " + total + " configs · " + instock + " in stock";
+  } catch (e) { /* stats are best-effort */ }
+}
+["q","f-type","f-chip","f-ram","f-ssd"].forEach(id => {
+  document.getElementById(id).addEventListener("input", applyFilters);
+  document.getElementById(id).addEventListener("change", applyFilters);
+});
+document.getElementById("f-stock").addEventListener("change", applyFilters);
+table.on("tableBuilt", applyFilters);
+
+// ---------- vendor column toggles ----------
+const vpList = document.getElementById("vp-list");
+const DOM = new Set(["verkkokauppa","gigantti","power","telia","elisa","veikonkone","euronics","multitronic","datatronic","jimms","tietokonekauppa","datasystems","scandinavianphoto","csmegastore","grey"]);
+VENDORS.forEach(([k,title]) => {
+  const lab = document.createElement("label");
+  lab.innerHTML = '<input type="checkbox" checked> '+title;
+  const cb = lab.querySelector("input");
+  cb.addEventListener("change", () => {
+    const col = table.getColumn("v_"+k);
+    if (col) col.setVisible(cb.checked);
+    if (cb.checked) vendorVis.add(k); else vendorVis.delete(k);
+    DATA.forEach(d => { d.halvin = cheapestFor(d); });
+    table.redraw();
+    applyFilters();
+  });
+  vpList.appendChild(lab);
+});
+const setAll = on => vpList.querySelectorAll("input").forEach(cb => { cb.checked = on; cb.dispatchEvent(new Event("change")); });
+document.getElementById("vp-all").onclick = () => setAll(true);
+document.getElementById("vp-none").onclick = () => setAll(false);
+document.getElementById("vp-dom").onclick = () => vpList.querySelectorAll("input").forEach(cb => {
+  const k = VENDORS.find(v => v[1] === cb.parentElement.textContent.trim());
+  if (!k) return;
+  cb.checked = DOM.has(k[0]);
+  cb.dispatchEvent(new Event("change"));
+});
+
+// ---------- misc ----------
+document.getElementById("btn-csv").onclick = () => table.download("csv","mac-prices.csv");
+document.getElementById("btn-clear").onclick = () => {
+  document.getElementById("q").value="";
+  ["f-type","f-chip","f-ram","f-ssd"].forEach(id => document.getElementById(id).value="");
+  document.getElementById("f-stock").checked=false;
+  setAll(true);
+  applyFilters();
+};
+</script>
+</body>
+</html>

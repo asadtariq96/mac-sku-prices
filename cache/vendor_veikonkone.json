@@ -1,0 +1,36 @@
+{
+  "store": "Veikon Kone",
+  "fetched_at": "2026-08-11T22:33:26",
+  "items": [
+    {
+      "title": "APPLE MAC MINI M4 16GB/512GB TIETOKONE",
+      "price": 1219.0,
+      "availability": "Tilaustuote",
+      "url": "https://www.veikonkone.fi/195949080715-apple-mac-mini-m4-chip-16gb"
+    },
+    {
+      "title": "APPLE MAC MINI M4 24GB/512GB TIETOKONE",
+      "price": 1439.0,
+      "availability": "Verkkokaupan varastossa",
+      "url": "https://www.veikonkone.fi/195949942945-apple-mac-mini-m4-chip-24gb"
+    },
+    {
+      "title": "APPLE MAC MINI M4 PRO 24GB/512GB TIETOKONE",
+      "price": 1949.0,
+      "availability": "Tilaustuote",
+      "url": "https://www.veikonkone.fi/195949942532-apple-mac-mini-m4-pro-24gb"
+    },
+    {
+      "title": "APPLE MAC STUDIO M4 MAX 36GB/512GB PÖYTÄTIETOKONE",
+      "price": 3099.0,
+      "availability": "Tilaustuote",
+      "url": "https://www.veikonkone.fi/195949056277-apple-mac-studio-14c-cpu-32c"
+    },
+    {
+      "title": "APPLE MAC STUDIO M3 ULTRA 96GB/1TB PÖYTÄTIETOKONE",
+      "price": 6499.0,
+      "availability": "Tilaustuote",
+      "url": "https://www.veikonkone.fi/195949056710-apple-mac-studio-28c-cpu-60c"
+    }
+  ]
+}

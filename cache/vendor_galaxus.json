@@ -1,0 +1,103 @@
+{
+ "store": "galaxus",
+ "fetched_at": "2026-08-12T01:50:00",
+ "note": "Galaxus.de storefront (Swiss/German), EUR, ships to Finland. Prices are DE market prices.",
+ "items": [
+  {
+   "title": "Apple Mac Mini 2024 M4 16/512 (10C/10C)",
+   "price": 1169.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-512-gb-16-gb-m4-apple-m4-10-core-pc-52491946"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 24/256 (10C/10C)",
+   "price": 979.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-256-gb-24-gb-m4-apple-m4-10-core-pc-52667814"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 24/512 (10C/10C)",
+   "price": 1229.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-512-gb-24-gb-m4-pc-52491924"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 16/256 (10C/10C)",
+   "price": null,
+   "availability": "price on product page",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-256-gb-16-gb-m4-apple-m4-10-core-pc-52491945"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 12C/16C 24/512",
+   "price": 1899.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-512-gb-24-gb-m4-pro-apple-m4-pro-16-core-pc-52491968"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 12C/16C 24/512 (2nd offer)",
+   "price": 1749.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-512-gb-24-gb-m4-pro-apple-m4-pro-16-core-pc-52593658"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 12C/16C 24/1TB",
+   "price": 1939.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-1000-gb-24-gb-m4-pro-apple-m4-pro-16-core-pc-52583020"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 12C/16C 24/2TB",
+   "price": 3669.63,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-2000-gb-24-gb-m4-pro-apple-m4-pro-16-core-pc-52592907"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 12C/16C 48/1TB",
+   "price": 2519.0,
+   "availability": "-10% (was 2802)",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-1000-gb-48-gb-m4-pro-apple-m4-pro-16-core-pc-52582858"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 12C/16C 48/2TB",
+   "price": 2999.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-2000-gb-48-gb-m4-pro-apple-m4-pro-16-core-pc-52581718"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 12C/16C 48/2TB (2nd offer)",
+   "price": 3299.99,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-2000-gb-48-gb-m4-pro-apple-m4-pro-16-core-pc-52583228"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 14C/20C 24/512",
+   "price": 1859.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-512-gb-24-gb-m4-pro-apple-m4-pro-20-core-pc-52582749"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 14C/20C 24/1TB",
+   "price": 2139.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-1000-gb-24-gb-m4-pro-apple-m4-pro-20-core-pc-52582185"
+  },
+  {
+   "title": "Apple Mac Mini 2024 M4 Pro 14C/20C 48/4TB",
+   "price": 4139.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-mini-2024-4000-gb-48-gb-m4-pro-apple-m4-pro-20-core-pc-52591472"
+  },
+  {
+   "title": "Apple Mac Studio 2025 M4 Max 14C/32C 36/512",
+   "price": 2955.81,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-studio-2025-512-gb-36-gb-m4-max-apple-m4-max-32-core-pc-55650350"
+  },
+  {
+   "title": "Apple Mac Studio 2025 M3 Ultra 28C/60C 96/1TB",
+   "price": 6299.0,
+   "availability": "",
+   "url": "https://www.galaxus.de/en/s1/product/apple-mac-studio-2025-1000-gb-96-gb-m3-ultra-apple-m3-ultra-60-core-pc-55650351"
+  }
+ ]
+}

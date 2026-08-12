@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Secrets / credentials — never commit
+cache/gigantti_key.txt
+vk_cookies.txt
+
+# Raw scrapes / page dumps (regenerable; parsed data lives in cache/)
+apple_mini.html
+apple_studio.html
+vk_mini.json
+vk_search.html
+vk_studio.json
+
+# Build marker
+DONE

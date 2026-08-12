@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mac mini / Mac Studio — price & availability (FI)</title>
+<link rel="stylesheet" href="../assets/tabulator_midnight.min.css">
+<style>
+:root{--bg:#101418;--panel:#161b22;--border:#2a313c;--text:#dbe2ea;--dim:#8b95a5;--acc:#4da3ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:13px}
+header{position:sticky;top:0;z-index:50;background:var(--panel);border-bottom:1px solid var(--border);padding:10px 16px}
+h1{font-size:17px;margin:0 0 2px}
+.sub{color:var(--dim);font-size:12px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px}
+.toolbar label{color:var(--dim);font-size:12px;margin-right:2px;display:flex;align-items:center;gap:5px;cursor:pointer}
+select,input[type=text]{background:#0d1117;color:var(--text);border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:12px}
+input[type=text]:focus,select:focus{outline:none;border-color:var(--acc)}
+button{background:#1f2630;color:var(--text);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:12px;cursor:pointer}
+button:hover{border-color:var(--acc)}
+#stats{color:var(--dim);font-size:12px;margin-left:auto;white-space:nowrap}
+details.vendors{position:relative}
+details.vendors summary{cursor:pointer;color:var(--dim);font-size:12px;user-select:none}
+.vendor-panel{position:absolute;right:0;top:24px;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:10px;width:360px;max-height:420px;overflow:auto;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.vendor-panel .vp-head{display:flex;gap:6px;margin-bottom:6px}
+.vendor-panel label{display:block;color:var(--text);font-size:12px;padding:2px 4px;white-space:nowrap;cursor:pointer}
+.vendor-panel label:hover{background:#1d242e}
+#grid-wrap{margin:10px 16px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.tabulator{font-size:12px;background:transparent}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content{background:#1a212b}
+.tabulator-row.tabulator-row-even{background:#12171f}
+.tabulator-row.tabulator-row-odd{background:#0f141b}
+.tabulator-row.tabulator-row-selected{background:#1b2b3d}
+.cell-price{font-variant-numeric:tabular-nums}
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600}
+.badge.mini{background:#17324f;color:#7cc0ff}
+.badge.studio{background:#3a1d4a;color:#d9a6ff}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.dot.ok{background:#3ddc84}.dot.warn{background:#f0b429}.dot.bad{background:#e5534b}.dot.na{background:#3a4250}
+.konf{font-weight:600;color:#e8eef5}
+.cto{color:var(--dim);font-weight:400;font-size:11px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Mac mini / Mac Studio — price &amp; availability (FI)</h1>
+  <div class="sub" id="subline"></div>
+  <div class="toolbar">
+    <input type="text" id="q" placeholder="Search: model, chip, RAM, SSD, vendor…" style="width:270px">
+    <select id="f-type"><option value="">Type: all</option></select>
+    <select id="f-chip"><option value="">Chip: all</option></select>
+    <select id="f-ram"><option value="">RAM: all</option></select>
+    <select id="f-ssd"><option value="">SSD: all</option></select>
+    <label><input type="checkbox" id="f-stock"> in stock only</label>
+    <details class="vendors" id="vd">
+      <summary>Vendors ▾</summary>
+      <div class="vendor-panel">
+        <div class="vp-head">
+          <button id="vp-all" style="flex:1">All</button>
+          <button id="vp-none" style="flex:1">None</button>
+          <button id="vp-dom" style="flex:1">Domestic</button>
+        </div>
+        <div id="vp-list"></div>
+      </div>
+    </details>
+    <button id="btn-csv">Export CSV</button>
+    <button id="btn-clear">Reset</button>
+    <span id="stats"></span>
+  </div>
+</header>
+<div id="grid-wrap"><div id="grid"></div></div>
+<div id="errbar" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#5a1e1e;color:#ffd7d7;font-size:12px;padding:6px 12px;z-index:99;white-space:pre-wrap"></div>
+<script>
+window.addEventListener("error", function (e) {
+  var bar = document.getElementById("errbar");
+  bar.style.display = "block";
+  bar.textContent += "[error] " + (e.message || "?") + "\n";
+});
+window.addEventListener("unhandledrejection", function (e) {
+  var bar = document.getElementById("errbar");
+  bar.style.display = "block";
+  bar.textContent += "[rejection] " + ((e.reason && e.reason.message) || e.reason || "?") + "\n";
+});
+</script>
+<script src="../assets/tabulator.min.js"></script>
+<script>
+"use strict";
+const DATA = [{"name": "Mac mini M4 16GB/256GB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 16, "ssd": 256, "part": "MU9D3", "family": "Mac mini M4 (2024)", "apple": 999.0, "halvin": {"v": "power", "p": 749.0, "d": "Power"}, "vendors": {"apple": {"p": 999.0, "a": "RRP", "m": false}, "power": {"p": 749.0, "a": "Ei varastossa, Click&Collect", "m": false}, "jimms": {"p": 829.0, "a": "Ei vahvistettu (Suomi)", "m": false}, "tietokonekauppa": {"p": 971.3, "a": "3 pv (Suomi)", "m": false}, "proshop": {"p": 785.75, "a": "360 pv (Tanska)", "m": false}, "csmegastore": {"p": 795.23, "a": "Ikke på lager", "m": false}, "galaxus": {"p": null, "a": "price on product page", "m": false}, "grey": {"p": 795.0, "a": "Ei vahvistettu (Suomi)", "m": false}}}, {"name": "Mac mini M4 16GB/512GB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 16, "ssd": 512, "part": "MU9E3", "family": "Mac mini M4 (2024)", "apple": 1219.0, "halvin": {"v": "alternate", "p": 1074.0, "d": "Alternate (DE)"}, "vendors": {"apple": {"p": 1219.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 1219.0, "a": "Varastossa", "m": false}, "gigantti": {"p": 1219.0, "a": "Ostettavissa verkossa (presale 2024-10-29)", "m": false}, "power": {"p": 1219.0, "a": "Toimitus myymälöistä, Click&Collect heti 18 myymälästä", "m": false}, "veikonkone": {"p": 1219.0, "a": "Tilaustuote", "m": false}, "euronics": {"p": 1219.0, "a": "", "m": false}, "multitronic": {"p": 1219.0, "a": "", "m": false}, "scandinavianphoto": {"p": 1219.0, "a": "", "m": false}, "csmegastore": {"p": 1178.38, "a": "Ikke på lager", "m": false}, "netonnet": {"p": 1126.0, "a": "", "m": false}, "webhallen": {"p": 1090.0, "a": "Webblager (discount -1100 kr)", "m": false}, "galaxus": {"p": 1169.0, "a": "", "m": false}, "alternate": {"p": 1074.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}}}, {"name": "Mac mini M4 16GB/1TB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 16, "ssd": 1024, "part": null, "family": "Mac mini M4 (2024)", "apple": 1549.0, "halvin": {"v": "multitronic", "p": 1229.9, "d": "Multitronic"}, "vendors": {"apple": {"p": 1549.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 1549.0, "a": "Rajoitettu saatavuus", "m": false}, "multitronic": {"p": 1229.9, "a": "", "m": false}, "scandinavianphoto": {"p": 1549.0, "a": "", "m": false}, "alternate": {"p": 1393.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}, "grey": {"p": 1321.39, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 16GB/2TB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 16, "ssd": 2048, "part": null, "family": "Mac mini M4 (2024)", "apple": 2099.0, "halvin": {"v": "grey", "p": 1845.34, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": 2099.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2099.0, "a": "Rajoitettu saatavuus", "m": false}, "grey": {"p": 1845.34, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 24GB/256GB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 24, "ssd": 256, "part": null, "family": "Mac mini M4 (2024)", "apple": 1219.0, "halvin": {"v": "galaxus", "p": 979.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 1219.0, "a": "RRP", "m": false}, "galaxus": {"p": 979.0, "a": "", "m": false}}}, {"name": "Mac mini M4 24GB/512GB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 24, "ssd": 512, "part": "MCYT4", "family": "Mac mini M4 (2024)", "apple": 1439.0, "halvin": {"v": "galaxus", "p": 1229.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 1439.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 1439.0, "a": "Varastossa", "m": false}, "gigantti": {"p": 1439.0, "a": "Ostettavissa verkossa (presale 2024-10-29)", "m": false}, "power": {"p": 1439.0, "a": "Saapuu 21.8.2026, Tilaa myymälään", "m": false}, "veikonkone": {"p": 1439.0, "a": "Verkkokaupan varastossa", "m": false}, "euronics": {"p": 1439.0, "a": "", "m": false}, "multitronic": {"p": 1439.0, "a": "", "m": false}, "scandinavianphoto": {"p": 1439.0, "a": "", "m": false}, "csmegastore": {"p": 1496.94, "a": "Ikke på lager", "m": false}, "netonnet": {"p": 1354.0, "a": "", "m": false}, "webhallen": {"p": 1426.0, "a": "Webblager", "m": false}, "galaxus": {"p": 1229.0, "a": "", "m": false}, "alternate": {"p": 1262.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": true}}}, {"name": "Mac mini M4 24GB/1TB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 24, "ssd": 1024, "part": null, "family": "Mac mini M4 (2024)", "apple": 1769.0, "halvin": {"v": "verkkokauppa", "p": 1769.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 1769.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 1769.0, "a": "Rajoitettu saatavuus", "m": false}, "scandinavianphoto": {"p": 1769.0, "a": "", "m": false}, "grey": {"p": 1866.31, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 24GB/2TB", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 24, "ssd": 2048, "part": null, "family": "Mac mini M4 (2024)", "apple": 2319.0, "halvin": {"v": "alternate", "p": 2106.0, "d": "Alternate (DE)"}, "vendors": {"apple": {"p": 2319.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2319.0, "a": "Rajoitettu saatavuus", "m": false}, "alternate": {"p": 2106.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": true}, "grey": {"p": 2442.66, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 32GB/256GB (CTO)", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 32, "ssd": 256, "part": null, "family": "Mac mini M4 (2024)", "apple": null, "halvin": {"v": "grey", "p": 1321.39, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 1321.39, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 32GB/512GB (CTO)", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 32, "ssd": 512, "part": null, "family": "Mac mini M4 (2024)", "apple": null, "halvin": {"v": "grey", "p": 1813.9, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 1813.9, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 32GB/1TB (CTO)", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 32, "ssd": 1024, "part": null, "family": "Mac mini M4 (2024)", "apple": null, "halvin": {"v": "grey", "p": 1976.34, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 1976.34, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 32GB/2TB (CTO)", "type": "Mac mini", "chip_full": "M4 10C CPU/10C GPU", "cpu": 10, "gpu": 10, "ram": 32, "ssd": 2048, "part": null, "family": "Mac mini M4 (2024)", "apple": null, "halvin": null, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 24GB/512GB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 24, "ssd": 512, "part": "MCX44", "family": "Mac mini M4 Pro (2024)", "apple": 1949.0, "halvin": {"v": "elisa", "p": 1699.0, "d": "Elisa"}, "vendors": {"apple": {"p": 1949.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 1949.0, "a": "Varastossa", "m": true}, "gigantti": {"p": 1949.0, "a": "Ostettavissa verkossa (presale 2024-10-29)", "m": false}, "power": {"p": 1949.0, "a": "Saapuu 18.9.2026, Tilaa myymälään", "m": false}, "telia": {"p": 1949.0, "a": "1-2 päivää (Suomi)", "m": false}, "elisa": {"p": 1699.0, "a": "2 pv (Suomi)", "m": false}, "veikonkone": {"p": 1949.0, "a": "Tilaustuote", "m": false}, "euronics": {"p": 1949.0, "a": "", "m": false}, "multitronic": {"p": 1949.0, "a": "", "m": false}, "jimms": {"p": 1899.0, "a": "Ei vahvistettu (Suomi)", "m": false}, "proshop": {"p": 2127.91, "a": "360 pv (Tanska)", "m": false}, "datasystems": {"p": 2076.55, "a": "Tilaustuote, 2-4 viikkoa (Suomi)", "m": false}, "scandinavianphoto": {"p": 1890.0, "a": "", "m": false}, "csmegastore": {"p": 1869.86, "a": "Ikke på lager", "m": true}, "netonnet": {"p": 1808.0, "a": "", "m": false}, "webhallen": {"p": 1908.0, "a": "Webblager", "m": false}, "amazon": {"p": 2002.73, "a": "FREE delivery Tue 18 Aug, Delivers to Finland; used & new offers from €1,800.20", "m": false}, "galaxus": {"p": 1749.0, "a": "", "m": true}, "alternate": {"p": 1707.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}, "grey": {"p": 2048.71, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 24GB/1TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 24, "ssd": 1024, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 2279.0, "halvin": {"v": "galaxus", "p": 1939.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 2279.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2499.0, "a": "Rajoitettu saatavuus", "m": false}, "multitronic": {"p": 2239.9, "a": "", "m": false}, "csmegastore": {"p": 4093.12, "a": "Ikke på lager", "m": false}, "galaxus": {"p": 1939.0, "a": "", "m": true}, "alternate": {"p": 2069.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 24GB/2TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 24, "ssd": 2048, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 2829.0, "halvin": {"v": "verkkokauppa", "p": 2829.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 2829.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2829.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 3669.63, "a": "", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 48GB/512GB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 48, "ssd": 512, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 2609.0, "halvin": {"v": "grey", "p": 3092.37, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": 2609.0, "a": "RRP", "m": false}, "grey": {"p": 3092.37, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 48GB/1TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 48, "ssd": 1024, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 2939.0, "halvin": {"v": "galaxus", "p": 2519.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 2939.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2939.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 2519.0, "a": "-10% (was 2802)", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 48GB/2TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 48, "ssd": 2048, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 3489.0, "halvin": {"v": "galaxus", "p": 2999.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 3489.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 3489.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 2999.0, "a": "", "m": true}, "alternate": {"p": 3292.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 64GB/512GB (CTO)", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 64, "ssd": 512, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": null, "halvin": {"v": "grey", "p": 2840.87, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 2840.87, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 24GB/512GB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 24, "ssd": 512, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 2169.0, "halvin": {"v": "elisa", "p": 1699.0, "d": "Elisa"}, "vendors": {"apple": {"p": 2169.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 1949.0, "a": "Varastossa", "m": true}, "gigantti": {"p": 1949.0, "a": "Ostettavissa verkossa (presale 2024-10-29)", "m": false}, "power": {"p": 1949.0, "a": "Saapuu 18.9.2026, Tilaa myymälään", "m": false}, "telia": {"p": 1949.0, "a": "1-2 päivää (Suomi)", "m": false}, "elisa": {"p": 1699.0, "a": "2 pv (Suomi)", "m": false}, "veikonkone": {"p": 1949.0, "a": "Tilaustuote", "m": false}, "euronics": {"p": 1949.0, "a": "", "m": false}, "multitronic": {"p": 1949.0, "a": "", "m": false}, "jimms": {"p": 1899.0, "a": "Ei vahvistettu (Suomi)", "m": false}, "proshop": {"p": 2127.91, "a": "360 pv (Tanska)", "m": false}, "datasystems": {"p": 2076.55, "a": "Tilaustuote, 2-4 viikkoa (Suomi)", "m": false}, "scandinavianphoto": {"p": 1890.0, "a": "", "m": false}, "csmegastore": {"p": 1869.86, "a": "Ikke på lager", "m": true}, "netonnet": {"p": 1808.0, "a": "", "m": false}, "webhallen": {"p": 1908.0, "a": "Webblager", "m": false}, "amazon": {"p": 2002.73, "a": "FREE delivery Tue 18 Aug, Delivers to Finland; used & new offers from €1,800.20", "m": false}, "galaxus": {"p": 1749.0, "a": "", "m": true}, "alternate": {"p": 1707.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}, "grey": {"p": 2048.71, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 24GB/1TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 24, "ssd": 1024, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 2499.0, "halvin": {"v": "galaxus", "p": 1939.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 2499.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2499.0, "a": "Rajoitettu saatavuus", "m": false}, "multitronic": {"p": 2239.9, "a": "", "m": false}, "csmegastore": {"p": 4093.12, "a": "Ikke på lager", "m": false}, "galaxus": {"p": 1939.0, "a": "", "m": true}, "alternate": {"p": 2069.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 24GB/2TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 24, "ssd": 2048, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 3049.0, "halvin": {"v": "verkkokauppa", "p": 2829.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 3049.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2829.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 3669.63, "a": "", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 48GB/512GB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 48, "ssd": 512, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 2829.0, "halvin": {"v": "grey", "p": 3092.37, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": 2829.0, "a": "RRP", "m": false}, "grey": {"p": 3092.37, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 48GB/1TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 48, "ssd": 1024, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 3159.0, "halvin": {"v": "galaxus", "p": 2519.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 3159.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2939.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 2519.0, "a": "-10% (was 2802)", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 48GB/2TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 48, "ssd": 2048, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 3709.0, "halvin": {"v": "galaxus", "p": 2999.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 3709.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 3489.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 2999.0, "a": "", "m": true}, "alternate": {"p": 3292.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 64GB/1TB (CTO)", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 64, "ssd": 1024, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": null, "halvin": null, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 64GB/4TB (CTO)", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 64, "ssd": 4096, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": null, "halvin": {"v": "grey", "p": 5146.27, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 5146.27, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 24GB/4TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 24, "ssd": 4096, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 3929.0, "halvin": {"v": "verkkokauppa", "p": 3929.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 3929.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 3929.0, "a": "Rajoitettu saatavuus", "m": true}}}, {"name": "Mac mini M4 Pro 12C/16C 48GB/4TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 48, "ssd": 4096, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 4589.0, "halvin": {"v": "galaxus", "p": 4139.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 4589.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 4589.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 4139.0, "a": "", "m": false}, "alternate": {"p": 4515.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}}}, {"name": "Mac mini M4 Pro 12C/16C 48GB/8TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 12, "gpu": 16, "ram": 48, "ssd": 8192, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 6789.0, "halvin": {"v": "verkkokauppa", "p": 6789.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 6789.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 6789.0, "a": "Rajoitettu saatavuus", "m": true}}}, {"name": "Mac mini M4 Pro 14C/20C 24GB/4TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 24, "ssd": 4096, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 4149.0, "halvin": {"v": "verkkokauppa", "p": 3929.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 4149.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 3929.0, "a": "Rajoitettu saatavuus", "m": true}}}, {"name": "Mac mini M4 Pro 14C/20C 48GB/4TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 48, "ssd": 4096, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 4809.0, "halvin": {"v": "galaxus", "p": 4139.0, "d": "Galaxus (DE)"}, "vendors": {"apple": {"p": 4809.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 4589.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 4139.0, "a": "", "m": false}, "alternate": {"p": 4515.0, "a": "Artikel kann derzeit nicht gekauft werden", "m": false}}}, {"name": "Mac mini M4 Pro 14C/20C 48GB/8TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 48, "ssd": 8192, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 7009.0, "halvin": {"v": "verkkokauppa", "p": 6789.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 7009.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 6789.0, "a": "Rajoitettu saatavuus", "m": true}}}, {"name": "Mac mini M4 Pro 14C/20C 24GB/2TB", "type": "Mac mini", "chip_full": "M4 Pro", "cpu": 14, "gpu": 20, "ram": 24, "ssd": 2048, "part": null, "family": "Mac mini M4 Pro (2024)", "apple": 3049.0, "halvin": {"v": "verkkokauppa", "p": 2829.0, "d": "Verkkokauppa.com"}, "vendors": {"apple": {"p": 3049.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 2829.0, "a": "Rajoitettu saatavuus", "m": true}, "galaxus": {"p": 3669.63, "a": "", "m": false}}}, {"name": "Mac Studio M4 Max 14C/32C 36GB/512GB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 14, "gpu": 32, "ram": 36, "ssd": 512, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 3099.0, "halvin": {"v": "elisa", "p": 2599.0, "d": "Elisa"}, "vendors": {"apple": {"p": 3099.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 3099.0, "a": "Rajoitettu saatavuus", "m": false}, "gigantti": {"p": 3099.0, "a": "Ostettavissa verkossa (presale 2025-03-05)", "m": false}, "telia": {"p": 3099.0, "a": "1-2 päivää (Suomi)", "m": false}, "elisa": {"p": 2599.0, "a": "2 pv (Suomi)", "m": false}, "veikonkone": {"p": 3099.0, "a": "Tilaustuote", "m": false}, "scandinavianphoto": {"p": 3099.0, "a": "n. kaksi viikkoa (Ruotsi)", "m": false}, "csmegastore": {"p": 3137.14, "a": "", "m": true}, "netonnet": {"p": 2999.0, "a": "", "m": false}, "webhallen": {"p": 2999.0, "a": "Webblager", "m": false}, "galaxus": {"p": 2955.81, "a": "", "m": false}, "grey": {"p": 3250.12, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M4 Max 14C/32C 36GB/1TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 14, "gpu": 32, "ram": 36, "ssd": 1024, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 3429.0, "halvin": {"v": "csmegastore", "p": 4047.68, "d": "CS Megastore"}, "vendors": {"apple": {"p": 3429.0, "a": "RRP", "m": false}, "csmegastore": {"p": 4047.68, "a": "", "m": false}}}, {"name": "Mac Studio M4 Max 14C/32C 36GB/2TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 14, "gpu": 32, "ram": 36, "ssd": 2048, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 3979.0, "halvin": null, "vendors": {"apple": {"p": 3979.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M4 Max 14C/32C 36GB/4TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 14, "gpu": 32, "ram": 36, "ssd": 4096, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 5079.0, "halvin": {"v": "grey", "p": 5334.89, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": 5079.0, "a": "RRP", "m": false}, "grey": {"p": 5334.89, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M4 Max 14C/32C 36GB/8TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 14, "gpu": 32, "ram": 36, "ssd": 8192, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 7279.0, "halvin": {"v": "grey", "p": 7640.29, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": 7279.0, "a": "RRP", "m": false}, "grey": {"p": 7640.29, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M4 Max 16C/40C 64GB/512GB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 16, "gpu": 40, "ram": 64, "ssd": 512, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 4199.0, "halvin": null, "vendors": {"apple": {"p": 4199.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M4 Max 16C/40C 64GB/1TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 16, "gpu": 40, "ram": 64, "ssd": 1024, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 4529.0, "halvin": {"v": "datasystems", "p": 3665.55, "d": "Data-Systems"}, "vendors": {"apple": {"p": 4529.0, "a": "RRP", "m": false}, "datasystems": {"p": 3665.55, "a": "Tilaustuote, 2-4 viikkoa (Suomi)", "m": false}, "csmegastore": {"p": 4014.83, "a": "Ikke på lager", "m": false}}}, {"name": "Mac Studio M4 Max 16C/40C 64GB/2TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 16, "gpu": 40, "ram": 64, "ssd": 2048, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 5079.0, "halvin": null, "vendors": {"apple": {"p": 5079.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M4 Max 16C/40C 64GB/4TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 16, "gpu": 40, "ram": 64, "ssd": 4096, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 6179.0, "halvin": null, "vendors": {"apple": {"p": 6179.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M4 Max 16C/40C 64GB/8TB", "type": "Mac Studio", "chip_full": "M4 Max", "cpu": 16, "gpu": 40, "ram": 64, "ssd": 8192, "part": null, "family": "Mac Studio M4 Max (2025)", "apple": 8379.0, "halvin": null, "vendors": {"apple": {"p": 8379.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M3 Ultra 28C/60C 96GB/1TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 28, "gpu": 60, "ram": 96, "ssd": 1024, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 6499.0, "halvin": {"v": "elisa", "p": 5099.0, "d": "Elisa"}, "vendors": {"apple": {"p": 6499.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 6499.0, "a": "Rajoitettu saatavuus", "m": false}, "gigantti": {"p": 6499.0, "a": "Ostettavissa verkossa (presale 2025-03-05)", "m": false}, "power": {"p": 6499.0, "a": "39 - 43 päivää (Ruotsi)", "m": false}, "telia": {"p": 6499.0, "a": "1-2 päivää (Suomi)", "m": false}, "elisa": {"p": 5099.0, "a": "2 pv (Suomi)", "m": false}, "veikonkone": {"p": 6499.0, "a": "Tilaustuote", "m": false}, "scandinavianphoto": {"p": 6490.0, "a": "n. kaksi viikkoa (Ruotsi)", "m": false}, "csmegastore": {"p": 6645.09, "a": "", "m": true}, "galaxus": {"p": 6299.0, "a": "", "m": false}, "grey": {"p": 6802.18, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M3 Ultra 28C/60C 96GB/2TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 28, "gpu": 60, "ram": 96, "ssd": 2048, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 7049.0, "halvin": null, "vendors": {"apple": {"p": 7049.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M3 Ultra 28C/60C 96GB/4TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 28, "gpu": 60, "ram": 96, "ssd": 4096, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 8149.0, "halvin": null, "vendors": {"apple": {"p": 8149.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M3 Ultra 28C/60C 96GB/8TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 28, "gpu": 60, "ram": 96, "ssd": 8192, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 10349.0, "halvin": null, "vendors": {"apple": {"p": 10349.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M3 Ultra 28C/60C 96GB/16TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 28, "gpu": 60, "ram": 96, "ssd": 16384, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 14749.0, "halvin": {"v": "grey", "p": 17197.24, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": 14749.0, "a": "RRP", "m": false}, "grey": {"p": 17197.24, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M3 Ultra 28C/60C 256GB/1TB (CTO)", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 28, "gpu": 60, "ram": 256, "ssd": 1024, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": null, "halvin": {"v": "grey", "p": 11433.73, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 11433.73, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M3 Ultra 28C/60C 256GB/16TB (CTO)", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 28, "gpu": 60, "ram": 256, "ssd": 16384, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": null, "halvin": {"v": "grey", "p": 21808.06, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 21808.06, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M3 Ultra 32C/80C 96GB/1TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 32, "gpu": 80, "ram": 96, "ssd": 1024, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 8149.0, "halvin": {"v": "elisa", "p": 5099.0, "d": "Elisa"}, "vendors": {"apple": {"p": 8149.0, "a": "RRP", "m": false}, "verkkokauppa": {"p": 6499.0, "a": "Rajoitettu saatavuus", "m": false}, "gigantti": {"p": 6499.0, "a": "Ostettavissa verkossa (presale 2025-03-05)", "m": false}, "power": {"p": 6499.0, "a": "39 - 43 päivää (Ruotsi)", "m": false}, "telia": {"p": 6499.0, "a": "1-2 päivää (Suomi)", "m": false}, "elisa": {"p": 5099.0, "a": "2 pv (Suomi)", "m": false}, "veikonkone": {"p": 6499.0, "a": "Tilaustuote", "m": false}, "scandinavianphoto": {"p": 6490.0, "a": "n. kaksi viikkoa (Ruotsi)", "m": false}, "csmegastore": {"p": 6645.09, "a": "", "m": true}, "galaxus": {"p": 6299.0, "a": "", "m": false}, "grey": {"p": 6802.18, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M3 Ultra 32C/80C 96GB/2TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 32, "gpu": 80, "ram": 96, "ssd": 2048, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 8699.0, "halvin": null, "vendors": {"apple": {"p": 8699.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M3 Ultra 32C/80C 96GB/4TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 32, "gpu": 80, "ram": 96, "ssd": 4096, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 9799.0, "halvin": null, "vendors": {"apple": {"p": 9799.0, "a": "RRP", "m": false}}}, {"name": "Mac Studio M3 Ultra 32C/80C 96GB/16TB", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 32, "gpu": 80, "ram": 96, "ssd": 16384, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": 16399.0, "halvin": {"v": "grey", "p": 17197.24, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": 16399.0, "a": "RRP", "m": false}, "grey": {"p": 17197.24, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M3 Ultra 32C/80C 256GB/2TB (CTO)", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 32, "gpu": 80, "ram": 256, "ssd": 2048, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": null, "halvin": {"v": "grey", "p": 13739.15, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 13739.15, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M3 Ultra 32C/80C 256GB/4TB (CTO)", "type": "Mac Studio", "chip_full": "M3 Ultra", "cpu": 32, "gpu": 80, "ram": 256, "ssd": 4096, "part": null, "family": "Mac Studio M3 Ultra (2025)", "apple": null, "halvin": {"v": "grey", "p": 14891.84, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 14891.84, "a": "5-21 päivää (Suomi)", "m": false}}}, {"name": "Mac Studio M2 Max 32GB/512GB (2023)", "type": "Mac Studio", "chip_full": "M2 Max / M2 Ultra", "cpu": null, "gpu": null, "ram": 32, "ssd": 512, "part": null, "family": "Mac Studio M2 (2023, bonus)", "apple": null, "halvin": {"v": "grey", "p": 2355.0, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 2355.0, "a": "Ei vahvistettu (Suomi)", "m": false}}}, {"name": "Mac Studio M2 Ultra 64GB/1TB (2023)", "type": "Mac Studio", "chip_full": "M2 Max / M2 Ultra", "cpu": null, "gpu": null, "ram": 64, "ssd": 1024, "part": null, "family": "Mac Studio M2 (2023, bonus)", "apple": null, "halvin": {"v": "grey", "p": 4939.0, "d": "hinta.fi grey (Kasuplan/Cruzbroker)"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "grey": {"p": 4939.0, "a": "Ei vahvistettu (Suomi)", "m": false}}}, {"name": "Mac mini M2 8GB/256GB (2023)", "type": "Mac mini", "chip_full": "M2 8C/10C", "cpu": null, "gpu": null, "ram": 8, "ssd": 256, "part": "MMFJ3", "family": "Mac mini M2 (2023, bonus)", "apple": null, "halvin": {"v": "power", "p": 499.0, "d": "Power"}, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}, "power": {"p": 499.0, "a": "Ei varastossa, Click&Collect", "m": false}, "amazon": {"p": 694.97, "a": "€7.50 delivery 13 - 14 Aug, Only 3 left in stock", "m": false}}}, {"name": "Mac mini M2 8GB/512GB (2023)", "type": "Mac mini", "chip_full": "M2 8C/10C", "cpu": null, "gpu": null, "ram": 8, "ssd": 512, "part": "MMFJ3", "family": "Mac mini M2 (2023, bonus)", "apple": null, "halvin": null, "vendors": {"apple": {"p": null, "a": "RRP", "m": false}}}];
+const VENDORS = [["apple", "Apple (apple.fi)"], ["verkkokauppa", "Verkkokauppa.com"], ["gigantti", "Gigantti"], ["power", "Power"], ["telia", "Telia"], ["elisa", "Elisa"], ["veikonkone", "Veikon Kone"], ["euronics", "Euronics"], ["multitronic", "Multitronic"], ["jimms", "Jimm's PC-store"], ["tietokonekauppa", "Tietokonekauppa"], ["proshop", "Proshop (DK)"], ["datasystems", "Data-Systems"], ["scandinavianphoto", "Scandinavian Photo"], ["csmegastore", "CS Megastore"], ["netonnet", "NetOnNet"], ["webhallen", "Webhallen (SE)"], ["amazon", "Amazon.de"], ["galaxus", "Galaxus (DE)"], ["alternate", "Alternate (DE)"], ["grey", "hinta.fi grey (Kasuplan/Cruzbroker)"]]; // [[key, display], ...]
+const META = {"generated": "2026-08-12", "src": "Apple FI (RRP), Verkkokauppa.com API (live stock), Gigantti Algolia, hinta.fi, and each store's own site. Availability dots: green=in stock, yellow=limited, red=out of stock / made to order. — = not carried or unknown."}; // {generated, src}
+const DISP = Object.fromEntries(VENDORS);
+const vendorKeys = VENDORS.map(v => v[0]);
+const vendorVis = new Set(vendorKeys);
+
+document.getElementById("subline").textContent =
+  "Updated " + META.generated + " · prices EUR incl. VAT · " + META.src;
+
+// ---------- pure helpers (no table access) ----------
+const fmtGB = v => v >= 1024 ? (v/1024) + " TB" : v + " GB";
+function shortChip(d) {
+  for (const c of ["M4 Pro","M3 Ultra","M4 Max","M2 Ultra","M2 Max"]) if (d.name.indexOf(c) >= 0) return c;
+  if (d.name.indexOf("M2") >= 0) return "M2";
+  if (d.name.indexOf("M4") >= 0) return "M4";
+  return (d.chip_full || "").split(" ")[0] || "";
+}
+function avEN(a){
+  if (!a) return a;
+  let s = a;
+  const map = [
+    ["Ikke på lager","out of stock"], ["Ei varastossa","not in stock"],
+    ["Verkkokaupan varastossa","online stock"], ["Rajoitettu saatavuus","limited availability"],
+    ["Tilaustuote","made to order"], ["Varastossa","in stock"], ["Loppu","sold out"],
+    ["Ei vahvistettu","unconfirmed"], ["Saapuu","arriving"], ["Webblager","web warehouse"],
+    ["Nouto myymälästä","store pickup"], ["toimitus myymälöistä","delivery from stores"],
+    ["heti","immediately"], ["alk.","from"],
+  ];
+  map.forEach(([f,t]) => { s = s.replace(new RegExp(f.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"), "gi"), t); });
+  s = s.replace(/(\d{1,2})\s*pv\b/gi, "$1 days");
+  return s;
+}
+function inStock(a){
+  if (!a) return false;
+  const s = a.toLowerCase();
+  if (/(ei varastossa|loppu|ikke p\u00e5 lager|tilaus|saapuu|ei vahvistettu|unconfirmed|out of stock|\bslut\b|ei saatav)/.test(s)) return false;
+  if (/(varastossa|in stock|\blager\b|click\s?&\s?collect|heti|toimitus myym\u00e4l\u00f6ist\u00e4|saatavilla|rajoitettu saatavuus|available)/.test(s)) return true;
+  const m = s.match(/(\d{1,2})\s*[-–]?\s*(\d{1,2})?\s*(?:pv|p\u00e4iv)/);
+  if (m) return parseInt(m[1]) <= 7;
+  return false;
+}
+function stockState(a){
+  if (!a) return "na";
+  if (/(ei varastossa|loppu|ikke p\u00e5 lager|tilaus|saapuu|slut|unconfirmed|ei vahvistettu)/i.test(a)) return "bad";
+  if (/(rajoitettu saatavuus|limited)/i.test(a)) return "warn";
+  if (inStock(a)) return "ok";
+  return "na";
+}
+function cheapestFor(d){
+  let best = null;
+  for (const k of d.vkeys){
+    if (!vendorVis.has(k)) continue;
+    const v = d["v_"+k];
+    if (v && v.p != null && (best == null || v.p < best.p)) best = {p: v.p, d: DISP[k]};
+  }
+  return best;
+}
+
+// ---------- data prepass: precompute display fields (formatters stay pure) ----------
+DATA.forEach(d => {
+  d._chip = shortChip(d);
+  d._ram = fmtGB(d.ram);
+  d._ssd = fmtGB(d.ssd);
+  d.vkeys = [];
+  for (const k of vendorKeys){
+    const x = d.vendors[k];
+    if (!x) continue;
+    d.vkeys.push(k);
+    const p = x.p, a = x.a || "";
+    const disp = (p != null ? (x.m ? "from " : "") + p.toLocaleString("fi-FI") + " €" : "")
+               + (a ? " · " + avEN(a) : "");
+    d["v_"+k] = {p: p, st: stockState(a), disp: disp};
+  }
+  d.halvin = cheapestFor(d);
+});
+
+// ---------- columns ----------
+const metaCols = [
+  {title:"Config", field:"name", frozen:true, width:250, headerSort:true,
+   formatter:c => '<span class="konf">'+c.getValue()+'</span>'},
+  {title:"Type", field:"type", width:95,
+   formatter:c => '<span class="badge '+(c.getValue()==="Mac mini"?"mini":"studio")+'">'+c.getValue()+"</span>"},
+  {title:"Chip", field:"_chip", width:90},
+  {title:"CPU", field:"cpu", width:52, sorter:"number", hozAlign:"right"},
+  {title:"GPU", field:"gpu", width:52, sorter:"number", hozAlign:"right"},
+  {title:"RAM", field:"_ram", width:72, sorter:"number", hozAlign:"right", accessor:(v,d)=>d.ram},
+  {title:"SSD", field:"_ssd", width:80, sorter:"number", hozAlign:"right", accessor:(v,d)=>d.ssd},
+  {title:"Code", field:"part", width:95},
+  {title:"Apple RRP", field:"apple", width:105, sorter:"number", hozAlign:"right",
+   formatter:c => c.getValue()!=null ? c.getValue().toLocaleString("fi-FI")+" €" : "—"},
+];
+const priceSorter = (a,b) => (a && a.p != null ? a.p : Infinity) - (b && b.p != null ? b.p : Infinity);
+const vendorCols = VENDORS.map(([k,title]) => ({
+  title, field:"v_"+k, width:118, headerSort:true, sorter:priceSorter, hozAlign:"right",
+  formatter:c => {
+    const v = c.getValue();
+    if (!v) return "—";
+    return '<span class="dot '+v.st+'"></span><span class="cell-price">'+v.disp+'</span>';
+  },
+}));
+
+// ---------- table ----------
+const table = new Tabulator("#grid", {
+  data: DATA, layout:"fitData", maxHeight:"calc(100vh - 130px)",
+  columns: metaCols.concat(vendorCols, [{
+    title:"Cheapest", field:"halvin", width:150, headerSort:true, sorter:priceSorter, hozAlign:"right",
+    formatter:c => {
+      const b = c.getValue();
+      return b ? '<span class="cell-price" style="font-weight:700;color:#3ddc84">'+b.p.toLocaleString("fi-FI")+' €</span> <span style="color:var(--dim)">· '+b.d+"</span>" : "—";
+    }
+  }]),
+  placeholder:"No results — adjust filters",
+  initialSort:[{column:"name",dir:"asc"}],
+});
+
+// ---------- filters (manual: Array.filter + setData — Tabulator's setFilter pipeline
+// recurses in Firefox with function filters) ----------
+function rowPasses(d, q, ft, fc, fr, fs, st){
+  if (ft && d.type !== ft) return false;
+  if (fc && d._chip !== fc) return false;
+  if (fr && d._ram !== fr) return false;
+  if (fs && d._ssd !== fs) return false;
+  if (st){
+    let ok = d.apple != null;
+    for (const k of d.vkeys){
+      if (!vendorVis.has(k)) continue;
+      const v = d["v_"+k];
+      if (v && (v.st === "ok" || v.st === "warn")) { ok = true; break; }
+    }
+    if (!ok) return false;
+  }
+  if (q){
+    const hay = [d.name, d.type, d._chip, d._ram, d._ssd, d.part||"", d.chip_full]
+      .concat(d.vkeys.map(k => DISP[k])).join(" ").toLowerCase();
+    if ((hay + " " + (d.halvin ? d.halvin.d.toLowerCase() : "")).indexOf(q) < 0) return false;
+  }
+  return true;
+}
+function applyFilters(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const ft = document.getElementById("f-type").value;
+  const fc = document.getElementById("f-chip").value;
+  const fr = document.getElementById("f-ram").value;
+  const fs = document.getElementById("f-ssd").value;
+  const st = document.getElementById("f-stock").checked;
+  const any = !!(q || ft || fc || fr || fs || st);
+  const active = any ? DATA.filter(d => rowPasses(d, q, ft, fc, fr, fs, st)) : DATA;
+  table.setData(active);
+  updateStats(active);
+}
+function updateStats(active){
+  try {
+    const total = DATA.length;
+    let instock = 0;
+    active.forEach(d => {
+      if (d.apple != null) { instock++; return; }
+      for (const k of d.vkeys){
+        if (!vendorVis.has(k)) continue;
+        const v = d["v_"+k];
+        if (v && (v.st === "ok" || v.st === "warn")) { instock++; return; }
+      }
+    });
+    document.getElementById("stats").textContent = active.length + " / " + total + " configs · " + instock + " in stock";
+  } catch (e) { /* stats are best-effort */ }
+}
+["q","f-type","f-chip","f-ram","f-ssd"].forEach(id => {
+  document.getElementById(id).addEventListener("input", applyFilters);
+  document.getElementById(id).addEventListener("change", applyFilters);
+});
+document.getElementById("f-stock").addEventListener("change", applyFilters);
+table.on("tableBuilt", applyFilters);
+
+// ---------- vendor column toggles ----------
+const vpList = document.getElementById("vp-list");
+const DOM = new Set(["verkkokauppa","gigantti","power","telia","elisa","veikonkone","euronics","multitronic","datatronic","jimms","tietokonekauppa","datasystems","scandinavianphoto","csmegastore","grey"]);
+VENDORS.forEach(([k,title]) => {
+  const lab = document.createElement("label");
+  lab.innerHTML = '<input type="checkbox" checked> '+title;
+  const cb = lab.querySelector("input");
+  cb.addEventListener("change", () => {
+    const col = table.getColumn("v_"+k);
+    if (col) col.setVisible(cb.checked);
+    if (cb.checked) vendorVis.add(k); else vendorVis.delete(k);
+    DATA.forEach(d => { d.halvin = cheapestFor(d); });
+    table.redraw();
+    applyFilters();
+  });
+  vpList.appendChild(lab);
+});
+const setAll = on => vpList.querySelectorAll("input").forEach(cb => { cb.checked = on; cb.dispatchEvent(new Event("change")); });
+document.getElementById("vp-all").onclick = () => setAll(true);
+document.getElementById("vp-none").onclick = () => setAll(false);
+document.getElementById("vp-dom").onclick = () => vpList.querySelectorAll("input").forEach(cb => {
+  const k = VENDORS.find(v => v[1] === cb.parentElement.textContent.trim());
+  if (!k) return;
+  cb.checked = DOM.has(k[0]);
+  cb.dispatchEvent(new Event("change"));
+});
+
+// ---------- misc ----------
+document.getElementById("btn-csv").onclick = () => table.download("csv","mac-prices.csv");
+document.getElementById("btn-clear").onclick = () => {
+  document.getElementById("q").value="";
+  ["f-type","f-chip","f-ram","f-ssd"].forEach(id => document.getElementById(id).value="");
+  document.getElementById("f-stock").checked=false;
+  setAll(true);
+  applyFilters();
+};
+</script>
+</body>
+</html>

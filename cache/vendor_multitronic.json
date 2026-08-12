@@ -1,0 +1,42 @@
+{
+ "store": "multitronic",
+ "fetched_at": "2026-08-12T18:57:53",
+ "items": [
+  {
+   "title": "Mac mini",
+   "price": null,
+   "availability": "",
+   "url": "https://www.multitronic.fi#"
+  },
+  {
+   "title": "Apple Mac mini M4 (10/10) 24 Gt, 512 Gt -tietokone, MCYT4",
+   "price": 1439.0,
+   "availability": "",
+   "url": "https://www.multitronic.fi/fi/products/4408372/apple-mac-mini-m4--10-10--24-gt--512-gt--tietokone--mcyt4"
+  },
+  {
+   "title": "Apple Mac mini M4 Pro (12/16) 24 Gt, 512 Gt -tietokone, MCX44",
+   "price": 1949.0,
+   "availability": "",
+   "url": "https://www.multitronic.fi/fi/products/4408371/apple-mac-mini-m4-pro--12-16--24-gt--512-gt--tietokone--mcx44"
+  },
+  {
+   "title": "Apple Mac mini M4 (10/10) 16 Gt, 512 Gt -tietokone, MU9E3",
+   "price": 1219.0,
+   "availability": "",
+   "url": "https://www.multitronic.fi/fi/products/4408374/apple-mac-mini-m4--10-10--16-gt--512-gt--tietokone--mu9e3"
+  },
+  {
+   "title": "CTO Apple Mac mini M4 Pro (12/16) 24 Gt, 1 Tt -tietokone, MCX44",
+   "price": 2239.9,
+   "availability": "",
+   "url": "https://www.multitronic.fi/fi/products/4409793/cto-apple-mac-mini-m4-pro--12-16--24-gt--1-tt--tietokone--mcx44"
+  },
+  {
+   "title": "CTO Apple Mac mini M4 (10/10) 16 Gt, 1 Tt -tietokone, MU9E3",
+   "price": 1229.9,
+   "availability": "",
+   "url": "https://www.multitronic.fi/fi/products/4409869/cto-apple-mac-mini-m4--10-10--16-gt--1-tt--tietokone--mu9e3"
+  }
+ ]
+}

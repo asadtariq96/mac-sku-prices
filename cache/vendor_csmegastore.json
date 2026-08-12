@@ -1,0 +1,21 @@
+{
+  "store": "CS Megastore",
+  "fetched_at": "2026-08-12T01:40:00",
+  "note": "CS Megastore (csmegastore.fi) — Danish A/S with Finnish storefront, EUR. Stock text on Apple computers is 'Ikke på lager' (out of stock) for all confirmed items. CTO items: 14C/32C = 36GB base RAM (Apple spec).",
+  "items": [
+    {"title": "Apple Mac mini , Apple M, M4, 16 GB, 256 GB, SSD, macOS Sequoia", "price": 795.23, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/21658981/apple-mac-mini-apple-m-m4-16-gb-256-gb-ssd-macos-sequoia"},
+    {"title": "Apple Mac mini , Apple M, M4, 16 GB, 512 GB, SSD, macOS Sequoia", "price": 1178.38, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/21658982/apple-mac-mini-apple-m-m4-16-gb-512-gb-ssd-macos-sequoia"},
+    {"title": "Apple Mac mini , Apple M, M4, 24 GB, 512 GB, SSD, macOS Sequoia", "price": 1496.94, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/21658980/apple-mac-mini-apple-m-m4-24-gb-512-gb-ssd-macos-sequoia"},
+    {"title": "Apple Mac mini - M4 Pro 16-ydin - 24 GB RAM, 512 GB SSD", "price": 1869.86, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/21659004/apple-mac-mini-m4-pro-enint%C3%A4%C3%A4n-ram-muistia-24-gt-ssd-levy-512-gt-apple-m4-pro-16-ydin-gigabit-ethernet-ieee-802-11ax-wi-fi-6e"},
+    {"title": "Apple Mac mini , Apple M, M4 Pro, 24 GB, 512 GB, SSD, macOS Sequoia", "price": 2056.95, "availability": "", "url": "https://www.csmegastore.fi/i/21930072/apple-mac-mini-apple-m-m4-pro-24-gb-512-gb-ssd-macos-sequoia"},
+    {"title": "Apple Mac mini , Apple M, M4 Pro, 24 GB, 1 TB, SSD, macOS Sequoia", "price": 4093.12, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/21709034/apple-mac-mini-apple-m-m4-pro-24-gb-1-tb-ssd-macos-sequoia"},
+    {"title": "Apple Mac Studio , Apple M, M4 Max, 36 GB, 512 GB, SSD, macOS Sequoia", "price": 3137.14, "availability": "", "url": "https://www.csmegastore.fi/i/24106412/apple-mac-studio-apple-m-m4-max-36-gb-512-gb-ssd-macos-sequoia"},
+    {"title": "Apple Mac Studio , Apple M, M4 Max, 36 GB, 512 GB, SSD, macOS Sequoia", "price": 3325.37, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/24125892/apple-mac-studio-apple-m-m4-max-36-gb-512-gb-ssd-macos-sequoia"},
+    {"title": "Apple Mac Studio , Apple M, M4 Max, 64 Gt, 1 TB, SSD, macOS Sequoia", "price": 4014.83, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/24950044/apple-mac-studio-apple-m-m4-max-64-gt-1-tb-ssd-macos-sequoia"},
+    {"title": "Apple Mac Studio CTO M4 Max 14C-CPU 32C-GPU 36GB (1TB)", "price": 4047.68, "availability": "", "url": "https://www.csmegastore.fi/i/24274500/apple-mac-studio-cto-m4-max-14c-cpu-32c-gpu-1tb"},
+    {"title": "Apple Mac Studio CTO (M4 Max 16C-CPU 40C-GPU, 48GB)", "price": 4448.35, "availability": "", "url": "https://www.csmegastore.fi/i/24317484/apple-mac-studio-cto-m4-max-16c-cpu-40c-gpu-48gb"},
+    {"title": "Apple Mac Studio , Apple M, M3 Ultra, 96 GB, 1 TB, SSD, macOS Sequoia", "price": 6645.09, "availability": "", "url": "https://www.csmegastore.fi/i/24106413/apple-mac-studio-apple-m-m3-ultra-96-gb-1-tb-ssd-macos-sequoia"},
+    {"title": "Apple Mac Studio , Apple M, M3 Ultra, 96 GB, 1 TB, SSD, macOS Sequoia", "price": 6910.88, "availability": "Ikke på lager", "url": "https://www.csmegastore.fi/i/24125894/apple-mac-studio-apple-m-m3-ultra-96-gb-1-tb-ssd-macos-sequoia"},
+    {"title": "Apple Mac Studio CTO M3 Ultra 28-kärnig CPU 60-kärnig GPU (2TB)", "price": 8321.53, "availability": "", "url": "https://www.csmegastore.fi/i/24386685/apple-mac-studio-cto-m3-ultra-28-k%C3%A4rnig-cpu-60-k%C3%A4rnig-gpu-2tb"}
+  ]
+}
