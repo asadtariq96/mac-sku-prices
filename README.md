@@ -36,6 +36,39 @@ Not carried (verified live, excluded): Dustin, Kuva-Järvinen, Prisma, K-Citymar
 Hobby Hall, Rajala Pro Shop, Stockmann, Fotoyks. Refurbed.fi has no Mac mini; Back Market /
 Tori.fi / Huuto.net are bot-walled used markets (check manually).
 
+## Requirements
+
+Python 3.11 or newer. Every collector is stdlib, so there is no pip install step and no
+headless-browser dependency in this repo.
+
+## How the pipeline is shaped
+
+```mermaid
+flowchart LR
+  C[("cache/<br/>one JSON per source")]
+  H["hinta.fi, server-rendered"] --> C
+  A["apple.fi configurator API"] --> C
+  V["Verkkokauppa search + availability"] --> C
+  G["Gigantti Algolia"] --> C
+  M["Multitronic, Galaxus, Alternate"] --> C
+  B["six browser-only stores"] --> C
+  C --> N["normalise<br/>price, stock, CTO variant"]
+  N --> X["SKU by vendor matrix"]
+  X --> O["out/mac_prices.md<br/>out/mac_prices.html"]
+```
+
+Collection and rendering are deliberately separate. Every collector writes one JSON file into
+`cache/` and stops there; `main.py` reads only `cache/` and never touches the network. That is what
+makes a half-finished refresh safe. Five of the twenty-one columns come from stores that render
+prices in the browser or rotate a signed search key every hour, and two of those will fail on any
+given run. Because a failed collector leaves its previous JSON in place, the table still builds and
+the stale cell is visibly stale rather than silently empty.
+
+The SKU side is its own problem. Apple's configurator multiplies base models by memory and storage
+into CTO variants, and the same variant is listed under three different names across twenty-one
+shops. `skus.json` holds the canonical rows and each collector maps its own naming onto them, which
+is why the matrix has a row for M4 32GB even though almost no shop sells it as a first-class product.
+
 ## How to refresh
 ```
 python refresh.py               # one-shot: hinta.fi backbone + Verkkokauppa + Gigantti + Multitronic
@@ -49,11 +82,9 @@ python vendors/curl_batch.py    # Multitronic, Galaxus, Alternate (Galaxus may 4
 python vendors/alternate.py
 python main.py                  # rebuild out/mac_prices.md + .html from cache/
 ```
-AUTO-REFRESH: a Hermes cron job ("mac-sku-prices weekly refresh", Sundays 04:00) runs the full
-pipeline: refresh.py + browser re-capture of the six browser-only stores (Veikon Kone, Euronics,
-CS Megastore, Scandinavian Photo, Amazon.de, Webhallen) + Gigantti key refresh, then rebuilds the
-tables and fires a BurntToast. Output is saved locally (job list via `hermes cron list`); the
-tables on disk are always the latest.
+AUTO-REFRESH: a weekly cron entry (Sundays, 04:00) runs the whole pipeline, including the browser
+re-capture of the six stores that render prices client-side, then rebuilds both tables. The files
+in `out/` are therefore always the most recent run.
 The hinta.fi backbone (all remaining Finnish sellers + prices) is in `cache/hintafi_products.json`
 — refresh with the parser in `main.load_hintafi()` (hinta.fi `/haku?q=` → product pages → seller
 tables, all server-rendered). The browser-only stores (Veikon Kone, Euronics, CS Megastore,
